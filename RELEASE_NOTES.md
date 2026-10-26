@@ -22,7 +22,7 @@ Everything available in 0.2.0 is included.
 If 0.2.0 shows the false “node already running” warning, start `hsd` manually before launching it:
 
 ```powershell
-hsd --prefix "$env:USERPROFILE\.hsd" --network main
+hsd --prefix "$env:USERPROFILE\.hsd" --network main --index-tx --index-address
 ```
 
 Use your own data directory if it is not `%USERPROFILE%\.hsd`. Once `hsd` listens on `12037` and `12039`, launch 0.2.0 and connect — or install 0.2.1, which fixes the detection.

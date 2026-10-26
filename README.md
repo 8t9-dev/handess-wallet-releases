@@ -60,7 +60,7 @@ Uninstall from **Settings → Apps → Installed apps → Handess Wallet**, or r
 If 0.2.0 is stuck on the false “node already running” warning, start `hsd` manually before launching 0.2.0:
 
 ```powershell
-hsd --prefix "$env:USERPROFILE\.hsd" --network main
+hsd --prefix "$env:USERPROFILE\.hsd" --network main --index-tx --index-address
 ```
 
 Use your own data directory if it is not `%USERPROFILE%\.hsd`. Once the node is listening on `12037` and `12039`, launch 0.2.0 and connect. Installing 0.2.1 removes the need for this workaround.
