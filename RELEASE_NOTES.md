@@ -1,11 +1,31 @@
-# Handess Wallet 0.2.0 — Windows Beta
+# Handess Wallet 0.2.1 — Windows Beta Hotfix
 
-Self-custody Handshake wallet, domain CRM, peer-to-peer marketplace, and HNS ↔ DGB atomic swaps.
+Self-custody Handshake wallet, domain CRM, peer-to-peer marketplace, and HNS ↔ DGB atomic swaps. This release fixes a false “hsd node is already running” warning that could block reconnecting after the app quit its managed node.
 
 ## Download
 
-- **Installer:** `Handess-Wallet-0.2.0.msi` (Windows 10/11 x64, 95.7 MB)
-- **SHA-256:** `CF112D5CEB97F726A6D5F80A30C99161A9692365DAB6305999FD82182BC11614`
+- **Installer:** `Handess-Wallet-0.2.1.msi` (Windows 10/11 x64, 95.7 MB)
+- **SHA-256:** `24FBD7018C5C717B00648FD5668C6068F6A67810AAF80A9982225D4A6FF0CBFE`
+
+## What changed
+
+- **Accurate node detection.** Handess now probes the local node port (`12037`) and wallet port (`12039`) before showing “An hsd node is already running locally” or attempting to attach. A saved API key alone is no longer treated as proof that a node is running.
+- **No stale banner.** While disconnected, the app rechecks both ports every 5 seconds. The banner appears when a node is started outside the app and clears when it stops.
+- **Specific connection errors.** If the node port is closed, the app says no node is listening on that address. If the node is running but the wallet server is down, it says so instead of blaming the API key or wallet name.
+
+Everything available in 0.2.0 is included.
+
+## Upgrading from 0.2.0
+
+0.2.0 has **no auto-updater**. Download the 0.2.1 MSI and run it. The installer upgrades the app in place; wallet data is stored outside the install directory and is preserved. Back up your seed phrase first.
+
+If 0.2.0 shows the false “node already running” warning, start `hsd` manually before launching it:
+
+```powershell
+hsd --prefix "$env:USERPROFILE\.hsd" --network main
+```
+
+Use your own data directory if it is not `%USERPROFILE%\.hsd`. Once `hsd` listens on `12037` and `12039`, launch 0.2.0 and connect — or install 0.2.1, which fixes the detection.
 
 ## Before installing
 
@@ -23,21 +43,12 @@ This build is distributed under the **Handess Wallet End User License Agreement 
 
 The EULA is included in the installer as `LICENSE`, is presented on first launch, and can be reviewed later from **Settings → About & Legal**. Third-party notices are included as `THIRD_PARTY_NOTICES.md`.
 
-## Highlights
-
-- HNS wallet with multiple wallets, passphrase encryption, send/receive, history, and message signing.
-- Domain CRM with tags, expiry timeline, bulk renew/transfer/DNS, watchlist, and bulk search.
-- Auction management: open, bid, reveal, redeem, register.
-- P2P name marketplace over Nostr with transfer-first trades and optional 2-of-3 escrow.
-- HNS → DGB and DGB → HNS atomic swaps with background monitoring and recovery.
-- Local hsd node management plus external node support.
-- Block/name explorer and dark mode.
-
 ## Beta caveats
 
 - Unsigned and not independently audited.
 - Windows x64 only in this release.
 - No bundled Node.js/hsd.
+- No auto-updater; install new versions manually.
 - No funded end-to-end swap or escrow trade has been completed on both chains yet; test with small amounts.
 - Escrow arbiter trust is real; lost keys can deadlock funds.
 - Marketplace and swaps depend on Nostr relays.
