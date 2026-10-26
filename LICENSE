@@ -1,0 +1,170 @@
+HANDESS WALLET END USER LICENSE AGREEMENT
+
+Version 1.0
+Last updated: 26 October 2026
+
+Copyright (c) 2026 Handess Wallet. All rights reserved.
+
+PLEASE READ THIS AGREEMENT CAREFULLY. IT IS A LEGAL AGREEMENT BETWEEN YOU AND THE LICENSOR. BY DOWNLOADING, INSTALLING, COPYING, OR USING THE SOFTWARE, OR BY CLICKING "ACCEPT", YOU AGREE TO BE BOUND BY THIS AGREEMENT. IF YOU DO NOT AGREE, DO NOT INSTALL OR USE THE SOFTWARE AND DELETE ANY COPIES YOU HAVE.
+
+1. PARTIES AND SCOPE
+
+1.1 "Handess Wallet", "we", "us", and "our" refer to the publisher of the software distributed under the name Handess Wallet.
+
+1.2 "Software" means the Handess Wallet desktop application, including its installer, object code, user interface, documentation, updates, and any accompanying materials provided by us. "Software" does not include third-party components or third-party services, which are governed by their own terms.
+
+1.3 This EULA is the entire agreement between you and us regarding the Software. It supersedes any prior or conflicting statements about the Software's license.
+
+2. LICENSE GRANT
+
+2.1 Subject to your compliance with this EULA, we grant you a limited, revocable, non-exclusive, non-transferable, non-sublicensable license to:
+
+    (a) download and install the Software on devices that you own or control; and
+
+    (b) use the Software for your personal purposes or for your organization's internal business purposes.
+
+2.2 This is a license, not a sale. We reserve all rights that are not expressly granted to you in this EULA.
+
+2.3 The beta is provided free of charge. No fee is required to download or use it. You are responsible for any network fees, third-party service fees, and other costs you incur.
+
+3. RESTRICTIONS
+
+You must not, and must not permit anyone else to:
+
+    (a) copy, clone, or reproduce the Software, except as reasonably necessary to install it and keep a backup copy;
+
+    (b) modify, edit, adapt, translate, or create derivative works of the Software;
+
+    (c) fork, redistribute, publish, upload, sublicense, sell, rent, lease, lend, host, or otherwise make the Software or any part of it available to any third party;
+
+    (d) reverse engineer, decompile, disassemble, or attempt to derive the source code of the Software, except to the extent applicable law expressly permits and that permission cannot be waived;
+
+    (e) remove, obscure, or alter any copyright, trademark, license, or other proprietary notice in the Software;
+
+    (f) use the Handess name, logo, or branding in a way that suggests that a modified version, fork, or other product is authorized, sponsored, or endorsed by us, or use them as the name or branding of a modified version;
+
+    (g) use the Software to develop, train, or improve a competing wallet, marketplace, escrow service, or swap service;
+
+    (h) circumvent, disable, or interfere with the Software's license acceptance screen, security features, or technical protections;
+
+    (i) use the Software in violation of any applicable law, regulation, sanctions program, or export control; or
+
+    (j) use the Software to infringe another person's rights, facilitate fraud, or interfere with the Handshake, DigiByte, Nostr, or other networks.
+
+4. OWNERSHIP
+
+4.1 The Software is proprietary software. We and our licensors own all right, title, and interest in and to the Software, including all copyrights, trade secrets, trademarks, and other intellectual property rights.
+
+4.2 No title or ownership interest is transferred to you. All rights not expressly granted in this EULA are reserved.
+
+5. THIRD-PARTY COMPONENTS AND SERVICES
+
+5.1 The Software includes third-party open-source components. Those components are governed by their own licenses, which are reproduced in the file THIRD_PARTY_NOTICES.md distributed with the Software. If a third-party license grants you rights that conflict with this EULA, that third-party license controls for that component only.
+
+5.2 The Software can connect to third-party software and services, including a Handshake node (hsd), Node.js, Electrum-DGB servers, Nostr relays, and price data providers. We do not control those services, do not operate them, and are not responsible for their availability, security, accuracy, fees, or terms. You are responsible for complying with their terms.
+
+5.3 The installer does not include Node.js or hsd. If you install those separately, their own licenses and terms apply.
+
+6. BETA SOFTWARE
+
+6.1 The Software is a free, experimental beta. It may contain bugs, errors, incomplete features, and security vulnerabilities. It may change, be suspended, or be discontinued at any time.
+
+6.2 We may provide updates, but we are not obligated to do so. Updates are part of the Software and are subject to this EULA. You are responsible for backing up your data, wallet files, configuration, and seed phrase before installing an update.
+
+6.3 Do not rely on the Software as your only copy of any wallet, key, name, or transaction record. Keep independent backups.
+
+7. NO WARRANTY
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, ACCURACY, SECURITY, QUIET ENJOYMENT, AND UNINTERRUPTED OR ERROR-FREE OPERATION. WE DO NOT WARRANT THAT THE SOFTWARE WILL BE FREE OF BUGS, VIRUSES, HARMFUL COMPONENTS, OR OTHER DEFECTS, OR THAT ANY DEFECT WILL BE CORRECTED.
+
+Some jurisdictions do not allow the exclusion of implied warranties, so some or all of this section may not apply to you. Nothing in this EULA excludes or limits any warranty or right that cannot be excluded or limited under applicable law.
+
+8. DIGITAL ASSETS AND YOUR RESPONSIBILITIES
+
+8.1 You are solely responsible for:
+
+    (a) your wallet, seed phrase, passphrase, private keys, WIF, API keys, node, device, and network security;
+
+    (b) every transaction, transfer, swap, escrow arrangement, marketplace trade, fee, and counterparty you choose;
+
+    (c) verifying every address, name, amount, fee, script, and chain state before signing or broadcasting anything;
+
+    (d) maintaining independent backups; and
+
+    (e) your tax, legal, accounting, and regulatory compliance.
+
+8.2 Blockchain transactions are generally irreversible. Digital assets are volatile and can be lost, stolen, frozen, or rendered worthless. Network fees are non-refundable. We cannot reverse a transaction, recover a lost seed phrase or passphrase, restore a lost key, or retrieve funds sent to the wrong address.
+
+8.3 We do not provide custody, exchange, brokerage, investment, legal, tax, or accounting services. We are not a party to any marketplace, escrow, or swap transaction. We do not guarantee that a counterparty will deliver a name, pay a price, complete a swap, or act honestly. We do not guarantee liquidity, arbitration, dispute resolution, or recovery of funds.
+
+8.4 The Software is not financial, investment, legal, or tax advice. You are responsible for your own decisions. Use small amounts and test on testnet or regtest where possible.
+
+9. EXPERIMENTAL FEATURES
+
+9.1 Marketplace, escrow, atomic swap, DGB, and Nostr features are experimental. They may not have completed a funded end-to-end trade on both chains. They may fail, lose funds, or behave unexpectedly.
+
+9.2 Escrow uses an external arbiter that you choose. We do not provide, control, endorse, or supervise arbiters. An arbiter may collude with a counterparty, make mistakes, or become unavailable. Lost keys can deadlock escrowed funds. There may be no timeout refund.
+
+9.3 You are responsible for choosing counterparties, arbiters, relays, Electrum servers, nodes, and networks. Use independent verification and start with small amounts.
+
+10. PRIVACY AND DATA
+
+10.1 The Software is local-first. As of this version, it does not require a Handess account and does not send data to a Handess-operated backend. It stores settings and wallet-related data on your device.
+
+10.2 The Software connects directly to the node, Electrum-DGB server, Nostr relays, and price data provider that you configure. Those third parties may see your IP address, public keys, names, amounts, and other metadata. Marketplace and swap coordination events are public by design. Purchase-intent payloads may be encrypted, but metadata can still leak.
+
+10.3 You are responsible for what you publish to public networks and for protecting your device and local data. This version does not include analytics or advertising SDKs.
+
+11. LIMITATION OF LIABILITY
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, WE WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, OR FOR ANY LOSS OF PROFITS, REVENUE, DATA, DIGITAL ASSETS, GOODWILL, OR BUSINESS OPPORTUNITY, ARISING OUT OF OR RELATING TO THE SOFTWARE OR THIS EULA, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, OUR TOTAL AGGREGATE LIABILITY FOR ALL CLAIMS ARISING OUT OF OR RELATING TO THE SOFTWARE OR THIS EULA WILL NOT EXCEED THE GREATER OF (A) THE AMOUNT YOU PAID US FOR THE SOFTWARE IN THE TWELVE MONTHS BEFORE THE CLAIM OR (B) USD 10.
+
+Some jurisdictions do not allow certain limitations of liability, so some or all of this section may not apply to you. Nothing in this EULA limits any liability that cannot be limited under applicable law.
+
+12. TERMINATION
+
+12.1 This EULA terminates automatically if you breach it. We may also suspend or terminate your license if you violate this EULA.
+
+12.2 On termination, you must stop using the Software and delete all copies you have, including backups, except to the extent applicable law requires you to keep them.
+
+12.3 Sections 3 through 14 survive termination. Termination does not affect any rights you have under a third-party component's license.
+
+13. CHANGES TO THIS EULA
+
+13.1 We may update this EULA. If we do, we will provide the new version with the Software, on the download page, or in the repository, and we may require you to accept it before continuing to use the Software.
+
+13.2 If you do not agree to an updated EULA, stop using the Software and delete your copies. If you continue to use the Software after accepting an updated EULA, the updated EULA applies.
+
+14. GENERAL
+
+14.1 Entire agreement. This EULA is the entire agreement between you and us regarding the Software and supersedes any prior or conflicting statements.
+
+14.2 Severability. If any provision of this EULA is found unenforceable, the remaining provisions will remain in full force and effect, and the unenforceable provision will be enforced to the maximum extent permitted by law.
+
+14.3 No waiver. Our failure to enforce any provision is not a waiver of that provision or any other provision.
+
+14.4 Assignment. You may not assign or transfer this EULA or your rights under it without our prior written consent. We may assign this EULA in connection with a transfer of the Software or the project.
+
+14.5 No third-party beneficiaries. This EULA does not create any rights for any third party, except that our licensors may enforce their rights in the Software and third-party components.
+
+14.6 Headings. Section headings are for convenience only and do not affect interpretation.
+
+14.7 Language. The English version of this EULA controls. Any translation is provided for convenience only.
+
+14.8 Export and sanctions. You must comply with all applicable export control and sanctions laws. You may not use the Software if you are prohibited from doing so under those laws.
+
+14.9 Consumer rights. Nothing in this EULA excludes or limits any mandatory consumer rights you have under the law of your country of residence. If any part of this EULA is inconsistent with those rights, that part does not apply to you to the extent of the inconsistency.
+
+15. CONTACT
+
+Questions about this EULA can be sent through the project's issue tracker:
+
+https://github.com/8t9-dev/handess-wallet-releases/issues
+
+Do not post seed phrases, private keys, WIFs, passphrases, API keys, or other secrets in an issue.
+
+BY CLICKING "ACCEPT", OR BY INSTALLING OR USING THE SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THIS EULA.
+
+END OF AGREEMENT
