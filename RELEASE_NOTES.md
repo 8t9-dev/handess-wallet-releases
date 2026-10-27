@@ -1,31 +1,38 @@
-# Handess Wallet 0.2.1 — Windows Beta Hotfix
+# Handess Wallet 0.2.2 — Windows Beta Hotfix
 
-Self-custody Handshake wallet, domain CRM, peer-to-peer marketplace, and HNS ↔ DGB atomic swaps. This release fixes a false “hsd node is already running” warning that could block reconnecting after the app quit its managed node.
+Self-custody Handshake wallet, domain CRM, peer-to-peer marketplace, and HNS ↔ DGB atomic swaps. This release fixes an empty **History** page and a broken **Deep Clean** action.
 
 ## Download
 
-- **Installer:** `Handess-Wallet-0.2.1.msi` (Windows 10/11 x64, 95.7 MB)
-- **SHA-256:** `24FBD7018C5C717B00648FD5668C6068F6A67810AAF80A9982225D4A6FF0CBFE`
+- **Installer:** `Handess-Wallet-0.2.2.msi` (Windows 10/11 x64, 95.6 MB)
+- **SHA-256:** `87B92EEBFE01EF5A7372F03DB496BE800AB6B3A280C1447E0734C792279F27BC`
 
 ## What changed
 
-- **Accurate node detection.** Handess now probes the local node port (`12037`) and wallet port (`12039`) before showing “An hsd node is already running locally” or attempting to attach. A saved API key alone is no longer treated as proof that a node is running.
-- **No stale banner.** While disconnected, the app rechecks both ports every 5 seconds. The banner appears when a node is started outside the app and clears when it stops.
-- **Specific connection errors.** If the node port is closed, the app says no node is listening on that address. If the node is running but the wallet server is down, it says so instead of blaming the API key or wallet name.
+- **History now shows your transactions.** The page reads the selected wallet's history through hsd's wallet-scoped API. The old path used a JSON-RPC method that can fail with `Assertion failed` on wallets with unresolved or pruned history records, which made the page look empty even when the wallet had transactions. The page also reloads after login and when you switch wallets.
+- **Deep Clean works correctly.** It now calls hsd's real `POST /deepclean` endpoint with the required backup acknowledgement, instead of a nonexistent `deepclean` RPC method.
+- **Sends use the wallet you selected.** HNS transfers no longer depend on hsd's global wallet pointer.
+- **Node detection from 0.2.1 is included.** The app checks that the local node and wallet ports are listening before showing “An hsd node is already running locally,” and rechecks every 5 seconds while disconnected.
 
-Everything available in 0.2.0 is included.
+## Important: do not use Deep Clean to fix History
 
-## Upgrading from 0.2.0
+**Deep Clean clears transaction history and balance state for every wallet managed by the node and requires a full blockchain rescan.** It is not needed for the 0.2.1 History bug. If History is empty on 0.2.1, install 0.2.2 and press **Refresh** on the History page instead.
 
-0.2.0 has **no auto-updater**. Download the 0.2.1 MSI and run it. The installer upgrades the app in place; wallet data is stored outside the install directory and is preserved. Back up your seed phrase first.
+If you already ran Deep Clean, start a **Rescan Blockchain** from Settings and let it finish before relying on balances or history.
 
-If 0.2.0 shows the false “node already running” warning, start `hsd` manually before launching it:
+## Upgrading from 0.2.1 or 0.2.0
+
+There is **no auto-updater**. Download the 0.2.2 MSI and run it. The installer upgrades the app in place; wallet data is stored outside the install directory and is preserved. Back up your seed phrase first.
+
+Transactions sent or received on 0.2.1 remain in the wallet database. Open **History** after upgrading and press **Refresh** if the page was already open.
+
+0.2.0's false “node already running” warning can still be avoided by starting `hsd` manually before launching it:
 
 ```powershell
 hsd --prefix "$env:USERPROFILE\.hsd" --network main --index-tx --index-address
 ```
 
-Use your own data directory if it is not `%USERPROFILE%\.hsd`. Once `hsd` listens on `12037` and `12039`, launch 0.2.0 and connect — or install 0.2.1, which fixes the detection.
+Use your own data directory if it is not `%USERPROFILE%\.hsd`. Installing 0.2.2 removes the need for this workaround.
 
 ## Before installing
 
@@ -49,6 +56,7 @@ The EULA is included in the installer as `LICENSE`, is presented on first launch
 - Windows x64 only in this release.
 - No bundled Node.js/hsd.
 - No auto-updater; install new versions manually.
+- Deep Clean is destructive: it clears history and balance state for all wallets on the node and requires a full rescan.
 - No funded end-to-end swap or escrow trade has been completed on both chains yet; test with small amounts.
 - Escrow arbiter trust is real; lost keys can deadlock funds.
 - Marketplace and swaps depend on Nostr relays.
