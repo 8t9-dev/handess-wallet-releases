@@ -14,14 +14,14 @@ This repository contains release downloads only. The source is not published.
 
 | Version | Platform | File | SHA-256 |
 | --- | --- | --- | --- |
-| **0.3.0 beta** | Windows 10/11 x64 | **[Handess-Wallet-0.3.0.msi](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.0/Handess-Wallet-0.3.0.msi)** (97.8 MB) | `D268D9D18A43B1E853173E92BFC47CAB312ECB9DA1FA085E14FEA7228AE1DB29` |
-| **Optional runtime** | Windows 10/11 x64 | **[Handess-HSD-Runtime-8.0.0-win-x64.zip](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.0/Handess-HSD-Runtime-8.0.0-win-x64.zip)** (79.5 MB) | `332930EC7D336DD98F82408413FA539ED240D4B7976BE0D05B008C5C2BDBB8DA` |
+| **0.3.1 beta** | Windows 10/11 x64 | **[Handess-Wallet-0.3.1.msi](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.1/Handess-Wallet-0.3.1.msi)** (97.8 MB) | `47002FA467C72A7324FEDF3B2B8F9E7E57C3FE3BDA242E15C7EA5AE5F9CA80B8` |
+| **Optional runtime** | Windows 10/11 x64 | **[Handess-HSD-Runtime-8.0.0-win-x64.zip](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.1/Handess-HSD-Runtime-8.0.0-win-x64.zip)** (79.5 MB) | `332930EC7D336DD98F82408413FA539ED240D4B7976BE0D05B008C5C2BDBB8DA` |
 
-The MSI is the wallet only. The optional runtime contains Node.js 24.15.0 and hsd 8.0.0 and is downloaded by the setup wizard for **New to Handshake** users. Existing Node.js or HSD installations are detected and can be reused.
+The MSI is the wallet only. The optional runtime contains Node.js 24.15.0 and hsd 8.0.0 and is used by the setup wizard for **New to Handshake** users. Existing Node.js or HSD installations are detected and can be reused.
 
 All files are also on the [Releases](https://github.com/8t9-dev/handess-wallet-releases/releases) page.
 
-> **0.2.2 and earlier are superseded.** Use 0.3.0.
+> **0.3.0 and earlier are superseded.** 0.3.1 fixes HNS sends taking the fee out of the recipient amount, and fixes the dark-mode name-transfer address input.
 
 ---
 
@@ -32,7 +32,7 @@ All files are also on the [Releases](https://github.com/8t9-dev/handess-wallet-r
 3. **Close Bob Wallet or any other wallet** using ports `12037`/`12039` before starting Handess's node.
 4. **Review the license.** Handess Wallet is proprietary beta software distributed under the Handess Wallet EULA. The app shows the EULA on first launch and requires acceptance before use.
 
-New users do **not** need to install Node.js or hsd manually. The setup wizard can install a private runtime. Existing Handshake users can point the wizard at their existing HSD data directory and avoid a new chain sync.
+New users can use the setup wizard to install a private Node.js + HSD runtime. Existing Handshake users can point the wizard at their existing HSD data directory and avoid a new chain sync.
 
 ---
 
@@ -53,9 +53,9 @@ New users do **not** need to install Node.js or hsd manually. The setup wizard c
 
 The setup wizard can be re-run later from **Settings → Node & HSD setup**.
 
-### Upgrading from 0.2.2
+### Upgrading from 0.3.0
 
-There is **no auto-updater**. Download and run the 0.3.0 MSI; it upgrades the installed app in place. Wallet data and HSD data live outside the install directory and are preserved. Back up your seed phrase first.
+There is **no auto-updater**. Download and run the 0.3.1 MSI; it upgrades the installed app in place. Wallet data and HSD data live outside the install directory and are preserved. Back up your seed phrase first.
 
 If your node is already configured, the wizard is skipped and your existing HSD settings remain in use.
 
@@ -66,14 +66,14 @@ If your node is already configured, the wizard is skipped and your existing HSD 
 PowerShell:
 
 ```powershell
-Get-FileHash .\Handess-Wallet-0.3.0.msi -Algorithm SHA256
+Get-FileHash .\Handess-Wallet-0.3.1.msi -Algorithm SHA256
 Get-FileHash .\Handess-HSD-Runtime-8.0.0-win-x64.zip -Algorithm SHA256
 ```
 
 Expected:
 
 ```text
-MSI:     D268D9D18A43B1E853173E92BFC47CAB312ECB9DA1FA085E14FEA7228AE1DB29
+MSI:     47002FA467C72A7324FEDF3B2B8F9E7E57C3FE3BDA242E15C7EA5AE5F9CA80B8
 Runtime: 332930EC7D336DD98F82408413FA539ED240D4B7976BE0D05B008C5C2BDBB8DA
 ```
 
@@ -81,15 +81,11 @@ The same checksums are attached to the release as `SHA256SUMS.txt`.
 
 ---
 
-## What is in 0.3.0
+## What is in 0.3.1
 
-- **First-run setup wizard** — private Node.js + HSD runtime download, existing Node.js detection, existing HSD detection, and an HSD data-folder picker with existing-chain detection.
-- **Search Engine refresh settings** — scan the last 1,000, 10,000, 50,000, or 105,120 blocks (105,120 = two years). Refreshes are resource-aware, show progress, can be cancelled, and persist the completed height. The manual Add-tag input was removed; tag chips and filters remain.
-- **Explore resource records** — every TXT record and chunk, every DS record with full fields, and NS/GLUE/SYNTH values. Explorer dates use actual block timestamps.
-- **Auctions** — corrected mainnet/testnet/regtest phase schedules; Global Auctions Overview is bidding-only, split into ending-soon and bid-activity halves with 50 names per page.
-- **My Domains tags** — on-chain TXT tags shown comma-separated, CSV export/import for bulk tag edits, and non-tag TXT preservation.
-- **Marketplace and escrow unchanged** — the seller selects the arbiter, and the arbiter is not automatically notified. Dispute PSBTs are delivered manually and signed with the offline `arbiter:sign` tool.
-- **Everything from 0.2.2**, including the HNS wallet, domain CRM, auctions, marketplace, escrow, HNS ↔ DGB swaps, DGB swap wallet, explorer, History fixes, and dark mode.
+- **HNS sends deliver the exact amount** — the recipient receives the amount entered in Send HNS. The network fee is added on top and paid by the sender. MAX and the confirmation total now match this behavior.
+- **Dark-mode transfer address fixed** — the recipient-address input in My Domains → Transfer now has a dark background, light text, and a readable placeholder.
+- **Everything from 0.3.0**, including the first-run setup wizard, Search Engine refresh scopes, complete Explore resource records, auction timing fixes, on-chain tags with CSV import/export, and the bidding-only Global Auctions Overview.
 
 ---
 
