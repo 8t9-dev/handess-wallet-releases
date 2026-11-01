@@ -1,7 +1,7 @@
 # Handess Wallet — Third-Party Notices
 
-**Applies to:** Handess Wallet 0.2.2 beta  
-**Generated:** 2026-10-26  
+**Applies to:** Handess Wallet 0.3.0 beta  
+**Generated:** 2026-11-01  
 **Generated from:** `package-lock.json` and the installed package license files
 
 Handess Wallet is proprietary software distributed under the Handess Wallet End User License Agreement in `LICENSE`. This file provides attribution and license notices for third-party software included in the application. It does not change the Handess Wallet EULA. Each third-party component remains governed by its own license.
@@ -10,8 +10,8 @@ Handess Wallet is proprietary software distributed under the Handess Wallet End 
 
 - **Electron 28** — MIT License. The Electron license text is installed as `LICENSE.electron.txt` in the application directory.
 - **Chromium** — BSD-3-Clause and other licenses. The complete Chromium third-party notices are installed as `LICENSES.chromium.html` in the application directory.
-- **Node.js** — not bundled with the installer. If you install Node.js separately, its license applies.
-- **hsd** — not bundled with the installer. If you install `hsd` separately, its MIT license applies.
+- **Node.js** — not included in the MSI. The optional setup runtime contains Node.js 24.15.0; its license is included in the runtime zip as `LICENSE-Node.txt`.
+- **hsd** — not included in the MSI. The optional setup runtime contains hsd 8.0.0; its MIT license is included in the runtime zip as `hsd/LICENSE`.
 
 ## Included packages
 
@@ -2065,6 +2065,41 @@ LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
+
+## Optional Handess HSD runtime
+
+The first-run setup wizard can download a separate, checksum-verified runtime containing Node.js 24.15.0 and hsd 8.0.0. It is not part of the Handess Wallet MSI and is installed into a private per-user folder only if selected.
+
+The runtime zip includes the full `LICENSE-Node.txt`, `hsd/LICENSE`, and a copy of this notices file. Node.js remains under the Node.js license (including its externally maintained libraries), and hsd remains under the MIT license below.
+
+```text
+hsd MIT License
+
+Copyright (c) 2014-2015, Fedor Indutny (https://github.com/indutny)
+Copyright (c) 2014-2018, Christopher Jeffrey (https://github.com/chjj)
+Copyright (c) 2014-2018, Bcoin Contributors (https://github.com/bcoin-org)
+Copyright (c) 2018, Handshake Contributors (https://github.com/handshake-org)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+```
+
+The complete Node.js license text is distributed in the optional runtime zip as `LICENSE-Node.txt` and is available at <https://github.com/nodejs/node/blob/v24.15.0/LICENSE>.
 
 ## Notes
 
