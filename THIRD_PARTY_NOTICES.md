@@ -1,6 +1,6 @@
 # Handess Wallet — Third-Party Notices
 
-**Applies to:** Handess Wallet 0.3.1 beta  
+**Applies to:** Handess Wallet 0.3.2 beta  
 **Generated:** 2026-11-01  
 **Generated from:** `package-lock.json` and the installed package license files
 
@@ -10,8 +10,8 @@ Handess Wallet is proprietary software distributed under the Handess Wallet End 
 
 - **Electron 28** — MIT License. The Electron license text is installed as `LICENSE.electron.txt` in the application directory.
 - **Chromium** — BSD-3-Clause and other licenses. The complete Chromium third-party notices are installed as `LICENSES.chromium.html` in the application directory.
-- **Node.js** — not included in the MSI. The optional setup runtime contains Node.js 24.15.0; its license is included in the runtime zip as `LICENSE-Node.txt`.
-- **hsd** — not included in the MSI. The optional setup runtime contains hsd 8.0.0; its MIT license is included in the runtime zip as `hsd/LICENSE`.
+- **Node.js** — not included in the installer package. The optional setup runtime contains Node.js 24.15.0; its license is included in the runtime zip as `LICENSE-Node.txt`.
+- **hsd** — not included in the installer package. The optional setup runtime contains hsd 8.0.0; its MIT license is included in the runtime zip as `hsd/LICENSE`.
 
 ## Included packages
 
@@ -2068,7 +2068,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Optional Handess HSD runtime
 
-The first-run setup wizard can download a separate, checksum-verified runtime containing Node.js 24.15.0 and hsd 8.0.0. It is not part of the Handess Wallet MSI and is installed into a private per-user folder only if selected.
+The first-run setup wizard can download a separate, checksum-verified runtime containing Node.js 24.15.0 and hsd 8.0.0. It is not part of the Handess Wallet installer package and is installed into a private per-user folder only if selected.
 
 The runtime zip includes the full `LICENSE-Node.txt`, `hsd/LICENSE`, and a copy of this notices file. Node.js remains under the Node.js license (including its externally maintained libraries), and hsd remains under the MIT license below.
 
