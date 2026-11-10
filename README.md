@@ -14,18 +14,18 @@ This repository contains release downloads only. The source is not published.
 
 | Version | Platform | File | SHA-256 |
 | --- | --- | --- | --- |
-| **0.3.3 beta** | Windows 10/11 x64 | **[Handess-Wallet-0.3.3.msi](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.3/Handess-Wallet-0.3.3.msi)** (97.8 MB) | `5256626703BC692777598A1E62CD0325FA82B5333A3E01B5033DAA46FF5CA8E1` |
-| **0.3.3 beta** | Linux x64 (portable) | **[Handess-Wallet-0.3.3-x86_64.AppImage](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.3/Handess-Wallet-0.3.3-x86_64.AppImage)** (122.2 MB) | `32B1961951CD2ECB8C28E3AA6066FBC72B5015C8108EA6C9A48E959DA563087D` |
-| **0.3.3 beta** | Ubuntu / Debian x64 | **[Handess-Wallet-0.3.3-amd64.deb](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.3/Handess-Wallet-0.3.3-amd64.deb)** (82.6 MB) | `468809B1096F7FDE886C33F2EFC2A27D23C5B906C16EAD9EAF64936B862432BB` |
-| **0.3.3 beta** | Fedora / RHEL x64 | **[Handess-Wallet-0.3.3-x86_64.rpm](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.3/Handess-Wallet-0.3.3-x86_64.rpm)** (81.0 MB) | `DDF14B83B73982AB4E8E7E9CCEEF19650DCA3FB8A58AB6964C5904BA20E342EF` |
-| **Optional runtime** | Windows x64 | **[Handess-HSD-Runtime-8.0.0-win-x64.zip](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.3/Handess-HSD-Runtime-8.0.0-win-x64.zip)** (79.5 MB) | `332930EC7D336DD98F82408413FA539ED240D4B7976BE0D05B008C5C2BDBB8DA` |
-| **Optional runtime** | Linux x64 | **[Handess-HSD-Runtime-8.0.0-linux-x64.zip](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.3/Handess-HSD-Runtime-8.0.0-linux-x64.zip)** (53.3 MB) | `45BBB5B5BB8B1A9DC7AB9F5F1DBDAE9DB2F301EEE684D4EAC38A6BB1FD15DADE` |
+| **0.3.4 beta** | Windows 10/11 x64 | **[Handess-Wallet-0.3.4.msi](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.4/Handess-Wallet-0.3.4.msi)** (97.8 MB) | `9AC5BB986E6417969EF246540E5E360218ECB1C01E079009FFA2E79F6D5DC74C` |
+| **0.3.4 beta** | Linux x64 (portable) | **[Handess-Wallet-0.3.4-x86_64.AppImage](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.4/Handess-Wallet-0.3.4-x86_64.AppImage)** (122.2 MB) | `5DE7C8CBEC19B97C61F4A03623B2C06377D8B6DB9E482C36ABB8143C80BADA47` |
+| **0.3.4 beta** | Ubuntu / Debian x64 | **[Handess-Wallet-0.3.4-amd64.deb](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.4/Handess-Wallet-0.3.4-amd64.deb)** (82.6 MB) | `0E7BE58837C78F2DC2170DB0A331E6D37D08A8BADDDA60993F85AFB60D0169A0` |
+| **0.3.4 beta** | Fedora / RHEL x64 | **[Handess-Wallet-0.3.4-x86_64.rpm](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.4/Handess-Wallet-0.3.4-x86_64.rpm)** (81.0 MB) | `B12811F173B4F7B9DE2CB50B9A1BFC16FE95B69B97D104CB7E996CB4C496205A` |
+| **Optional runtime** | Windows x64 | **[Handess-HSD-Runtime-8.0.0-win-x64.zip](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.4/Handess-HSD-Runtime-8.0.0-win-x64.zip)** (79.5 MB) | `332930EC7D336DD98F82408413FA539ED240D4B7976BE0D05B008C5C2BDBB8DA` |
+| **Optional runtime** | Linux x64 | **[Handess-HSD-Runtime-8.0.0-linux-x64.zip](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.4/Handess-HSD-Runtime-8.0.0-linux-x64.zip)** (53.3 MB) | `45BBB5B5BB8B1A9DC7AB9F5F1DBDAE9DB2F301EEE684D4EAC38A6BB1FD15DADE` |
 
 The app packages contain the wallet only. The optional runtime contains Node.js 24.15.0 and hsd 8.0.0 and is used by the setup wizard for **New to Handshake** users. Existing Node.js or HSD installations are detected and can be reused.
 
 All files are also on the [Releases](https://github.com/8t9-dev/handess-wallet-releases/releases) page.
 
-> **0.3.2 and earlier are superseded.** 0.3.3 fixes a DGB swap main-process crash caused by Electrum server notifications, and prevents a pending name transfer from being reported as cancelled in the marketplace.
+> **0.3.3 and earlier are superseded.** 0.3.4 fixes HNS HTLC and escrow address derivation on the packaged Electron runtime, which failed with “Digest method not supported” when starting an HNS → DGB swap.
 
 ---
 
@@ -67,41 +67,41 @@ New users can use the setup wizard to install a private Node.js + HSD runtime. E
 ### Ubuntu / Debian
 
 ```bash
-sudo apt install ./Handess-Wallet-0.3.3-amd64.deb
+sudo apt install ./Handess-Wallet-0.3.4-amd64.deb
 handess-wallet
 ```
 
 ### Fedora / RHEL
 
 ```bash
-sudo dnf install ./Handess-Wallet-0.3.3-x86_64.rpm
+sudo dnf install ./Handess-Wallet-0.3.4-x86_64.rpm
 handess-wallet
 ```
 
 openSUSE may require allowing the unsigned package:
 
 ```bash
-sudo zypper install --allow-unsigned-rpm ./Handess-Wallet-0.3.3-x86_64.rpm
+sudo zypper install --allow-unsigned-rpm ./Handess-Wallet-0.3.4-x86_64.rpm
 ```
 
 ### AppImage (portable)
 
 ```bash
-chmod +x Handess-Wallet-0.3.3-x86_64.AppImage
-./Handess-Wallet-0.3.3-x86_64.AppImage
+chmod +x Handess-Wallet-0.3.4-x86_64.AppImage
+./Handess-Wallet-0.3.4-x86_64.AppImage
 ```
 
 If FUSE is unavailable, run:
 
 ```bash
-./Handess-Wallet-0.3.3-x86_64.AppImage --appimage-extract-and-run
+./Handess-Wallet-0.3.4-x86_64.AppImage --appimage-extract-and-run
 ```
 
 The setup wizard can be re-run later from **Settings → Node & HSD setup**.
 
-### Upgrading from 0.3.2
+### Upgrading from 0.3.3
 
-There is **no auto-updater**. Download and install the 0.3.3 package for your platform. Wallet data and HSD data live outside the install directory and are preserved. Back up your seed phrase first.
+There is **no auto-updater**. Download and install the 0.3.4 package for your platform. Wallet data and HSD data live outside the install directory and are preserved. Back up your seed phrase first.
 
 If your node is already configured, the wizard is skipped and your existing HSD settings remain in use.
 
@@ -112,7 +112,7 @@ If your node is already configured, the wizard is skipped and your existing HSD 
 ### Windows (PowerShell)
 
 ```powershell
-Get-FileHash .\Handess-Wallet-0.3.3.msi -Algorithm SHA256
+Get-FileHash .\Handess-Wallet-0.3.4.msi -Algorithm SHA256
 Get-FileHash .\Handess-HSD-Runtime-8.0.0-win-x64.zip -Algorithm SHA256
 ```
 
@@ -126,13 +126,10 @@ The same checksums are attached to the release as `SHA256SUMS.txt`.
 
 ---
 
-## What is in 0.3.3
+## What is in 0.3.4
 
-- **DGB swap crash fixed** — DGB Electrum header notifications no longer trigger a main-process JavaScript error. The client now routes notifications safely and contains malformed server messages.
-- **Marketplace transfer detection fixed** — a normal `CLOSED` name is no longer treated as a cancelled transfer while the seller's transfer is still waiting to confirm.
-- **Pay seller is gated on-chain** — My Purchases disables the payment action until the name transfer is detected on-chain. The table shows “Waiting for on-chain transfer…” instead of the misleading cancellation error.
-- **Payment after finalize** — if the buyer finalized the name before paying, the seller can still be paid.
-- **Everything from 0.3.2**, including Linux packages, the DGB WIF QR, Finalize All, per-name transaction-history rows for batched finalizes, correct fee handling for received names, and click-to-copy transaction hashes.
+- **HNS swap and escrow SHA3 fix** — HNS P2WSH HTLC and escrow addresses now use the bundled pure-JS SHA3-256 implementation instead of Node/OpenSSL. This fixes the “Digest method not supported” error in the packaged Electron runtime when starting an HNS → DGB swap or funding an HNS escrow.
+- **Everything from 0.3.3**, including the DGB Electrum notification crash fix, marketplace transfer detection fixes, Linux packages, the DGB WIF QR, Finalize All, per-name transaction-history rows, received-name fee handling, and clickable transaction hashes.
 
 ---
 
@@ -168,7 +165,7 @@ Please include the app version, operating system and version, and the exact erro
 
 Handess Wallet is **proprietary beta software** distributed under the **Handess Wallet End User License Agreement (EULA)**. It is free to download and use for personal or internal business purposes.
 
-The EULA does **not** permit modifying, editing, forking, creating derivative works from, or redistributing the app. The source is not published, and no source-code license is granted. The Handess name and logo may not be used for modified versions.
+The EULA does **not** permit modifying, editing, forking, creating derivative works based on, or redistributing the app. The source is not published, and no source-code license is granted. The Handess name and logo may not be used for modified versions.
 
 The EULA is available in this repository as [LICENSE](LICENSE), is included in the app package as `LICENSE`, is shown on first launch, and can be reviewed later from **Settings → About & Legal**. Third-party components remain under their own licenses; their notices are included in this repository and the app package as [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). The optional runtimes include Node.js and hsd license files.
 
