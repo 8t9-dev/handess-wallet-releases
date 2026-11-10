@@ -14,18 +14,18 @@ This repository contains release downloads only. The source is not published.
 
 | Version | Platform | File | SHA-256 |
 | --- | --- | --- | --- |
-| **0.3.2 beta** | Windows 10/11 x64 | **[Handess-Wallet-0.3.2.msi](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.2/Handess-Wallet-0.3.2.msi)** (97.8 MB) | `FE17A9A8D49BCA085BB52958D52B1769005D2AE8144F00CCE6C6D9E7EAE47CCC` |
-| **0.3.2 beta** | Linux x64 (portable) | **[Handess-Wallet-0.3.2-x86_64.AppImage](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.2/Handess-Wallet-0.3.2-x86_64.AppImage)** (122.2 MB) | `7225F562BDFD444A5D52530AF1828D5C8D678450AC5C54B13F0BED3FA49E3DE6` |
-| **0.3.2 beta** | Ubuntu / Debian x64 | **[Handess-Wallet-0.3.2-amd64.deb](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.2/Handess-Wallet-0.3.2-amd64.deb)** (82.6 MB) | `B6A925AC79F66BFFE92940EE7CC9025FFD73944E07A9D39CC7A95C579F851F3D` |
-| **0.3.2 beta** | Fedora / RHEL x64 | **[Handess-Wallet-0.3.2-x86_64.rpm](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.2/Handess-Wallet-0.3.2-x86_64.rpm)** (81.0 MB) | `7583475973116C3CE50F89E5BC7CB1AD33FAE133C82D6A1412DC51344232B507` |
-| **Optional runtime** | Windows x64 | **[Handess-HSD-Runtime-8.0.0-win-x64.zip](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.2/Handess-HSD-Runtime-8.0.0-win-x64.zip)** (79.5 MB) | `332930EC7D336DD98F82408413FA539ED240D4B7976BE0D05B008C5C2BDBB8DA` |
-| **Optional runtime** | Linux x64 | **[Handess-HSD-Runtime-8.0.0-linux-x64.zip](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.2/Handess-HSD-Runtime-8.0.0-linux-x64.zip)** (53.3 MB) | `45BBB5B5BB8B1A9DC7AB9F5F1DBDAE9DB2F301EEE684D4EAC38A6BB1FD15DADE` |
+| **0.3.3 beta** | Windows 10/11 x64 | **[Handess-Wallet-0.3.3.msi](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.3/Handess-Wallet-0.3.3.msi)** (97.8 MB) | `5256626703BC692777598A1E62CD0325FA82B5333A3E01B5033DAA46FF5CA8E1` |
+| **0.3.3 beta** | Linux x64 (portable) | **[Handess-Wallet-0.3.3-x86_64.AppImage](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.3/Handess-Wallet-0.3.3-x86_64.AppImage)** (122.2 MB) | `32B1961951CD2ECB8C28E3AA6066FBC72B5015C8108EA6C9A48E959DA563087D` |
+| **0.3.3 beta** | Ubuntu / Debian x64 | **[Handess-Wallet-0.3.3-amd64.deb](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.3/Handess-Wallet-0.3.3-amd64.deb)** (82.6 MB) | `468809B1096F7FDE886C33F2EFC2A27D23C5B906C16EAD9EAF64936B862432BB` |
+| **0.3.3 beta** | Fedora / RHEL x64 | **[Handess-Wallet-0.3.3-x86_64.rpm](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.3/Handess-Wallet-0.3.3-x86_64.rpm)** (81.0 MB) | `DDF14B83B73982AB4E8E7E9CCEEF19650DCA3FB8A58AB6964C5904BA20E342EF` |
+| **Optional runtime** | Windows x64 | **[Handess-HSD-Runtime-8.0.0-win-x64.zip](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.3/Handess-HSD-Runtime-8.0.0-win-x64.zip)** (79.5 MB) | `332930EC7D336DD98F82408413FA539ED240D4B7976BE0D05B008C5C2BDBB8DA` |
+| **Optional runtime** | Linux x64 | **[Handess-HSD-Runtime-8.0.0-linux-x64.zip](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.3/Handess-HSD-Runtime-8.0.0-linux-x64.zip)** (53.3 MB) | `45BBB5B5BB8B1A9DC7AB9F5F1DBDAE9DB2F301EEE684D4EAC38A6BB1FD15DADE` |
 
 The app packages contain the wallet only. The optional runtime contains Node.js 24.15.0 and hsd 8.0.0 and is used by the setup wizard for **New to Handshake** users. Existing Node.js or HSD installations are detected and can be reused.
 
 All files are also on the [Releases](https://github.com/8t9-dev/handess-wallet-releases/releases) page.
 
-> **0.3.1 and earlier are superseded.** 0.3.2 adds Linux packages, the DGB WIF QR view, Finalize All, per-name transaction-history rows for batched finalizes, correct fee handling for received names, and click-to-copy transaction hashes.
+> **0.3.2 and earlier are superseded.** 0.3.3 fixes a DGB swap main-process crash caused by Electrum server notifications, and prevents a pending name transfer from being reported as cancelled in the marketplace.
 
 ---
 
@@ -67,41 +67,41 @@ New users can use the setup wizard to install a private Node.js + HSD runtime. E
 ### Ubuntu / Debian
 
 ```bash
-sudo apt install ./Handess-Wallet-0.3.2-amd64.deb
+sudo apt install ./Handess-Wallet-0.3.3-amd64.deb
 handess-wallet
 ```
 
 ### Fedora / RHEL
 
 ```bash
-sudo dnf install ./Handess-Wallet-0.3.2-x86_64.rpm
+sudo dnf install ./Handess-Wallet-0.3.3-x86_64.rpm
 handess-wallet
 ```
 
 openSUSE may require allowing the unsigned package:
 
 ```bash
-sudo zypper install --allow-unsigned-rpm ./Handess-Wallet-0.3.2-x86_64.rpm
+sudo zypper install --allow-unsigned-rpm ./Handess-Wallet-0.3.3-x86_64.rpm
 ```
 
 ### AppImage (portable)
 
 ```bash
-chmod +x Handess-Wallet-0.3.2-x86_64.AppImage
-./Handess-Wallet-0.3.2-x86_64.AppImage
+chmod +x Handess-Wallet-0.3.3-x86_64.AppImage
+./Handess-Wallet-0.3.3-x86_64.AppImage
 ```
 
 If FUSE is unavailable, run:
 
 ```bash
-./Handess-Wallet-0.3.2-x86_64.AppImage --appimage-extract-and-run
+./Handess-Wallet-0.3.3-x86_64.AppImage --appimage-extract-and-run
 ```
 
 The setup wizard can be re-run later from **Settings → Node & HSD setup**.
 
-### Upgrading from 0.3.1
+### Upgrading from 0.3.2
 
-There is **no auto-updater**. Download and install the 0.3.2 package for your platform. Wallet data and HSD data live outside the install directory and are preserved. Back up your seed phrase first.
+There is **no auto-updater**. Download and install the 0.3.3 package for your platform. Wallet data and HSD data live outside the install directory and are preserved. Back up your seed phrase first.
 
 If your node is already configured, the wizard is skipped and your existing HSD settings remain in use.
 
@@ -112,7 +112,7 @@ If your node is already configured, the wizard is skipped and your existing HSD 
 ### Windows (PowerShell)
 
 ```powershell
-Get-FileHash .\Handess-Wallet-0.3.2.msi -Algorithm SHA256
+Get-FileHash .\Handess-Wallet-0.3.3.msi -Algorithm SHA256
 Get-FileHash .\Handess-HSD-Runtime-8.0.0-win-x64.zip -Algorithm SHA256
 ```
 
@@ -126,15 +126,13 @@ The same checksums are attached to the release as `SHA256SUMS.txt`.
 
 ---
 
-## What is in 0.3.2
+## What is in 0.3.3
 
-- **Linux support** — AppImage, `.deb`, and `.rpm` packages plus a Linux private HSD runtime.
-- **DGB WIF QR** — reveal the QR only after the wallet passphrase gate, with a clear warning; hide it again on demand.
-- **Finalize All** — My Domains shows a green **Finalize All** button when more than two transfers are ready. One passphrase entry finalizes the batch.
-- **Per-name transaction history** — a batched FINALIZE now shows one History row per name, with the single on-chain fee shown once.
-- **Incoming name transfers do not charge the recipient a fee** — receiving a name now shows the received amount with a zero fee.
-- **Copyable transaction hashes** — click a recent transaction hash on the Dashboard or History page to copy it.
-- **Everything from 0.3.1**, including exact-amount HNS sends with the fee added on top and the dark-mode transfer address fix.
+- **DGB swap crash fixed** — DGB Electrum header notifications no longer trigger a main-process JavaScript error. The client now routes notifications safely and contains malformed server messages.
+- **Marketplace transfer detection fixed** — a normal `CLOSED` name is no longer treated as a cancelled transfer while the seller's transfer is still waiting to confirm.
+- **Pay seller is gated on-chain** — My Purchases disables the payment action until the name transfer is detected on-chain. The table shows “Waiting for on-chain transfer…” instead of the misleading cancellation error.
+- **Payment after finalize** — if the buyer finalized the name before paying, the seller can still be paid.
+- **Everything from 0.3.2**, including Linux packages, the DGB WIF QR, Finalize All, per-name transaction-history rows for batched finalizes, correct fee handling for received names, and click-to-copy transaction hashes.
 
 ---
 
@@ -162,7 +160,7 @@ Open an issue: <https://github.com/8t9-dev/handess-wallet-releases/issues>
 
 Please include the app version, operating system and version, and the exact error text.
 
-**Never post seed phrases, private keys, WIFs, passphrases, API keys, or signed PSBTs that contain sensitive data.** Redact addresses and transaction IDs if needed.
+**Never post seed phrases, private keys, WIFs, passphrases, API keys, or signed PSBTs.** Redact addresses and transaction IDs if needed.
 
 ---
 

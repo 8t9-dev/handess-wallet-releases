@@ -1,24 +1,24 @@
-# Handess Wallet 0.3.2 — Windows + Linux Beta
+# Handess Wallet 0.3.3 — Swap and Marketplace Hotfix
 
-Self-custody Handshake wallet, domain CRM, peer-to-peer marketplace, and HNS ↔ DGB atomic swaps. This release adds Linux packages and the Linux private HSD runtime, plus the DGB WIF QR, Finalize All, per-name transaction history for batched finalizes, correct fee handling for received names, and click-to-copy transaction hashes.
+Self-custody Handshake wallet, domain CRM, peer-to-peer marketplace, and HNS ↔ DGB atomic swaps. This release fixes a DGB swap main-process crash and a false “seller cancelled” marketplace error while a name transfer is still confirming.
 
 ## Download
 
 ### Windows x64
 
-- **Installer:** `Handess-Wallet-0.3.2.msi` (97.8 MB)
-- **MSI SHA-256:** `FE17A9A8D49BCA085BB52958D52B1769005D2AE8144F00CCE6C6D9E7EAE47CCC`
+- **Installer:** `Handess-Wallet-0.3.3.msi` (97.8 MB)
+- **MSI SHA-256:** `5256626703BC692777598A1E62CD0325FA82B5333A3E01B5033DAA46FF5CA8E1`
 - **Optional HSD runtime:** `Handess-HSD-Runtime-8.0.0-win-x64.zip` (79.5 MB, Node.js 24.15.0 + hsd 8.0.0)
 - **Runtime SHA-256:** `332930EC7D336DD98F82408413FA539ED240D4B7976BE0D05B008C5C2BDBB8DA`
 
 ### Linux x64
 
-- **Portable AppImage:** `Handess-Wallet-0.3.2-x86_64.AppImage` (122.2 MB)
-- **AppImage SHA-256:** `7225F562BDFD444A5D52530AF1828D5C8D678450AC5C54B13F0BED3FA49E3DE6`
-- **Ubuntu/Debian:** `Handess-Wallet-0.3.2-amd64.deb` (82.6 MB)
-- **Deb SHA-256:** `B6A925AC79F66BFFE92940EE7CC9025FFD73944E07A9D39CC7A95C579F851F3D`
-- **Fedora/RHEL:** `Handess-Wallet-0.3.2-x86_64.rpm` (81.0 MB)
-- **RPM SHA-256:** `7583475973116C3CE50F89E5BC7CB1AD33FAE133C82D6A1412DC51344232B507`
+- **Portable AppImage:** `Handess-Wallet-0.3.3-x86_64.AppImage` (122.2 MB)
+- **AppImage SHA-256:** `32B1961951CD2ECB8C28E3AA6066FBC72B5015C8108EA6C9A48E959DA563087D`
+- **Ubuntu/Debian:** `Handess-Wallet-0.3.3-amd64.deb` (82.6 MB)
+- **Deb SHA-256:** `468809B1096F7FDE886C33F2EFC2A27D23C5B906C16EAD9EAF64936B862432BB`
+- **Fedora/RHEL:** `Handess-Wallet-0.3.3-x86_64.rpm` (81.0 MB)
+- **RPM SHA-256:** `DDF14B83B73982AB4E8E7E9CCEEF19650DCA3FB8A58AB6964C5904BA20E342EF`
 - **Optional HSD runtime:** `Handess-HSD-Runtime-8.0.0-linux-x64.zip` (53.3 MB, Node.js 24.15.0 + hsd 8.0.0)
 - **Linux runtime SHA-256:** `45BBB5B5BB8B1A9DC7AB9F5F1DBDAE9DB2F301EEE684D4EAC38A6BB1FD15DADE`
 
@@ -29,34 +29,34 @@ The app packages contain the wallet only. The optional runtime is downloaded sep
 ### Ubuntu / Debian
 
 ```bash
-sudo apt install ./Handess-Wallet-0.3.2-amd64.deb
+sudo apt install ./Handess-Wallet-0.3.3-amd64.deb
 handess-wallet
 ```
 
 ### Fedora / RHEL
 
 ```bash
-sudo dnf install ./Handess-Wallet-0.3.2-x86_64.rpm
+sudo dnf install ./Handess-Wallet-0.3.3-x86_64.rpm
 handess-wallet
 ```
 
 openSUSE may require allowing the unsigned package:
 
 ```bash
-sudo zypper install --allow-unsigned-rpm ./Handess-Wallet-0.3.2-x86_64.rpm
+sudo zypper install --allow-unsigned-rpm ./Handess-Wallet-0.3.3-x86_64.rpm
 ```
 
 ### AppImage
 
 ```bash
-chmod +x Handess-Wallet-0.3.2-x86_64.AppImage
-./Handess-Wallet-0.3.2-x86_64.AppImage
+chmod +x Handess-Wallet-0.3.3-x86_64.AppImage
+./Handess-Wallet-0.3.3-x86_64.AppImage
 ```
 
 If FUSE is unavailable:
 
 ```bash
-./Handess-Wallet-0.3.2-x86_64.AppImage --appimage-extract-and-run
+./Handess-Wallet-0.3.3-x86_64.AppImage --appimage-extract-and-run
 ```
 
 Ubuntu 24.04 may need `libfuse2t64` for the AppImage. The `.deb` is recommended on Ubuntu/Debian.
@@ -65,45 +65,35 @@ Linux packages are built on Ubuntu 22.04. Intended baseline: Ubuntu 22.04+, Debi
 
 ## What changed
 
-### Linux support
+### DGB swap crash fixed
 
-- Added AppImage, `.deb`, and `.rpm` packages for Linux x64.
-- Added a Linux private HSD runtime containing Node.js 24.15.0 and hsd 8.0.0.
-- The setup wizard now detects Linux system Node.js/HSD installations, installs the private runtime under the app's user-data folder, and restores the executable permission after extraction.
-- The Windows runtime remains unchanged.
+- DGB Electrum header notifications no longer trigger a main-process JavaScript error.
+- The Electrum client now routes server notifications through its initialized event emitter instead of the undefined `subscribe` property.
+- Malformed or unexpected server notifications are caught and logged instead of terminating the main process.
 
-### DGB WIF QR
+This fixes the “A JavaScript error occurred in the main process — Cannot read properties of undefined (reading 'emit')” dialog seen on the Swap page.
 
-- The DGB WIF QR is gated behind the existing WIF reveal and wallet passphrase.
-- A separate **Show QR** action displays the QR with a warning.
-- The QR clears on hide, logout, and network change.
+### Marketplace transfer detection fixed
 
-### Finalize All
+- A normal `CLOSED` name is no longer treated as a cancelled transfer while the seller's `TRANSFER` is still waiting to be mined or indexed.
+- A cancellation is reported only when a transfer to the buyer was actually confirmed and the name is no longer in `TRANSFER` state.
+- If the transfer transaction cannot be fetched, the buyer's wallet history is checked before giving up.
+- **Pay seller** is disabled until the name transfer is detected on-chain. My Purchases shows “Waiting for on-chain transfer…” instead of claiming the seller cancelled.
+- If the buyer already finalized the name before paying, payment to the seller is still allowed.
 
-- My Domains shows a green **Finalize All** button only when more than two transfers are ready to finalize.
-- One passphrase entry unlocks the wallet and submits the batch through the batch FINALIZE path.
-- Progress, completion, and failure states are shown on the page; the wallet is unlocked once, and unencrypted wallets are handled correctly.
+### Retained from 0.3.2
 
-### Transaction history fixes
+- Linux AppImage, `.deb`, and `.rpm` packages plus the Linux private HSD runtime.
+- DGB WIF QR, gated behind the wallet passphrase.
+- Finalize All for more than two ready transfers.
+- One History row per name for batched FINALIZE transactions, with the transaction fee shown once.
+- Received name transfers no longer charge or display the sender's fee.
+- Click-to-copy transaction hashes on the Dashboard and History page.
+- Exact-amount HNS sends with the fee added on top, and the dark-mode transfer-address fix.
 
-- A batched FINALIZE now produces one History row per name instead of a single row for the whole batch.
-- Expanded rows share the on-chain transaction hash and have unique row IDs.
-- The batch transaction fee is shown once, not multiplied across the name rows.
-- Receiving a name no longer charges or displays the sender's transaction fee. Incoming transfers show the received amount with fee zero.
+## Upgrading from 0.3.2
 
-### Copyable transaction hashes
-
-- Click a recent transaction hash on the Dashboard or History page to copy the full hash.
-- Copying uses the Electron clipboard bridge, with Web Clipboard and `execCommand` fallbacks.
-
-### Retained from 0.3.1
-
-- HNS sends deliver the exact entered amount; the network fee is added on top and paid by the sender.
-- The dark-mode name-transfer recipient input is readable.
-
-## Upgrading
-
-There is **no auto-updater**. Download and install the 0.3.2 package for your platform. Wallet data and HSD data live outside the install directory and are preserved. Back up your seed phrase first.
+There is **no auto-updater**. Download and install the 0.3.3 package for your platform. Wallet data and HSD data live outside the install directory and are preserved. Back up your seed phrase first.
 
 If your node is already configured, the setup wizard is skipped and your existing HSD settings remain in use.
 
@@ -112,7 +102,7 @@ If your node is already configured, the setup wizard is skipped and your existin
 ### Windows (PowerShell)
 
 ```powershell
-Get-FileHash .\Handess-Wallet-0.3.2.msi -Algorithm SHA256
+Get-FileHash .\Handess-Wallet-0.3.3.msi -Algorithm SHA256
 Get-FileHash .\Handess-HSD-Runtime-8.0.0-win-x64.zip -Algorithm SHA256
 ```
 
