@@ -14,18 +14,18 @@ This repository contains release downloads only. The source is not published.
 
 | Version | Platform | File | SHA-256 |
 | --- | --- | --- | --- |
-| **0.3.5 beta** | Windows 10/11 x64 | **[Handess-Wallet-0.3.5.msi](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.5/Handess-Wallet-0.3.5.msi)** (97.8 MB) | `A9A7F4AB3EAC30502CCB1A8A1F13B2C0D3497B3C4DAC931CA6765D5C38381120` |
-| **0.3.5 beta** | Linux x64 (portable) | **[Handess-Wallet-0.3.5-x86_64.AppImage](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.5/Handess-Wallet-0.3.5-x86_64.AppImage)** (122.2 MB) | `BCFE55EBB5BD648C1015165C08D11D6C5BCA18AB4166745D7653865A39524B28` |
-| **0.3.5 beta** | Ubuntu / Debian x64 | **[Handess-Wallet-0.3.5-amd64.deb](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.5/Handess-Wallet-0.3.5-amd64.deb)** (82.6 MB) | `4E520CEFDBF576139E59E147EB03C251E3786EE92B5CFB8E666F2C20E09AD847` |
-| **0.3.5 beta** | Fedora / RHEL x64 | **[Handess-Wallet-0.3.5-x86_64.rpm](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.5/Handess-Wallet-0.3.5-x86_64.rpm)** (81.0 MB) | `F54CA9E953672CD825FE03D629CA979DA363AB978064A269EB27C5190E153905` |
-| **Optional runtime** | Windows x64 | **[Handess-HSD-Runtime-8.0.0-win-x64.zip](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.5/Handess-HSD-Runtime-8.0.0-win-x64.zip)** (79.5 MB) | `332930EC7D336DD98F82408413FA539ED240D4B7976BE0D05B008C5C2BDBB8DA` |
-| **Optional runtime** | Linux x64 | **[Handess-HSD-Runtime-8.0.0-linux-x64.zip](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.5/Handess-HSD-Runtime-8.0.0-linux-x64.zip)** (53.3 MB) | `45BBB5B5BB8B1A9DC7AB9F5F1DBDAE9DB2F301EEE684D4EAC38A6BB1FD15DADE` |
+| **0.3.6 beta** | Windows 10/11 x64 | **[Handess-Wallet-0.3.6.msi](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.6/Handess-Wallet-0.3.6.msi)** (97.8 MB) | `3EE1F4FF7839CDCC02160365ED752C0EA052F206308579ECEE0F74444FDCA048` |
+| **0.3.6 beta** | Linux x64 (portable) | **[Handess-Wallet-0.3.6-x86_64.AppImage](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.6/Handess-Wallet-0.3.6-x86_64.AppImage)** (122.2 MB) | `D18A332B576B5AEC90627ECBC50848FE723C7752C8418C8274290DC826536FD8` |
+| **0.3.6 beta** | Ubuntu / Debian x64 | **[Handess-Wallet-0.3.6-amd64.deb](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.6/Handess-Wallet-0.3.6-amd64.deb)** (82.6 MB) | `31EAB46A2EF22425D834C6E4ADEBF21DA121F249DD1B3ED16F1F5060D98D1965` |
+| **0.3.6 beta** | Fedora / RHEL x64 | **[Handess-Wallet-0.3.6-x86_64.rpm](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.6/Handess-Wallet-0.3.6-x86_64.rpm)** (81.0 MB) | `43A353B8745C9BDF860745FA2BB1767024BB6B09533E9E9854CC2C0D5100E05E` |
+| **Optional runtime** | Windows x64 | **[Handess-HSD-Runtime-8.0.0-win-x64.zip](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.6/Handess-HSD-Runtime-8.0.0-win-x64.zip)** (79.5 MB) | `332930EC7D336DD98F82408413FA539ED240D4B7976BE0D05B008C5C2BDBB8DA` |
+| **Optional runtime** | Linux x64 | **[Handess-HSD-Runtime-8.0.0-linux-x64.zip](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.6/Handess-HSD-Runtime-8.0.0-linux-x64.zip)** (53.3 MB) | `45BBB5B5BB8B1A9DC7AB9F5F1DBDAE9DB2F301EEE684D4EAC38A6BB1FD15DADE` |
 
 The app packages contain the wallet only. The optional runtime contains Node.js 24.15.0 and hsd 8.0.0 and is used by the setup wizard for **New to Handshake** users. Existing Node.js or HSD installations are detected and can be reused.
 
 All files are also on the [Releases](https://github.com/8t9-dev/handess-wallet-releases/releases) page.
 
-> **0.3.4 and earlier are superseded.** 0.3.5 fixes swap event synchronization between the two PCs: the DGB side now applies the HNS side’s terms and funding events and can continue the swap.
+> **0.3.5 and earlier are superseded.** 0.3.6 fixes DGB transaction signing: the signature was being double-hashed, so DigiByte nodes rejected DGB HTLC funding, claim, and refund transactions.
 
 ---
 
@@ -67,45 +67,43 @@ New users can use the setup wizard to install a private Node.js + HSD runtime. E
 ### Ubuntu / Debian
 
 ```bash
-sudo apt install ./Handess-Wallet-0.3.5-amd64.deb
+sudo apt install ./Handess-Wallet-0.3.6-amd64.deb
 handess-wallet
 ```
 
 ### Fedora / RHEL
 
 ```bash
-sudo dnf install ./Handess-Wallet-0.3.5-x86_64.rpm
+sudo dnf install ./Handess-Wallet-0.3.6-x86_64.rpm
 handess-wallet
 ```
 
 openSUSE may require allowing the unsigned package:
 
 ```bash
-sudo zypper install --allow-unsigned-rpm ./Handess-Wallet-0.3.5-x86_64.rpm
+sudo zypper install --allow-unsigned-rpm ./Handess-Wallet-0.3.6-x86_64.rpm
 ```
 
 ### AppImage (portable)
 
 ```bash
-chmod +x Handess-Wallet-0.3.5-x86_64.AppImage
-./Handess-Wallet-0.3.5-x86_64.AppImage
+chmod +x Handess-Wallet-0.3.6-x86_64.AppImage
+./Handess-Wallet-0.3.6-x86_64.AppImage
 ```
 
 If FUSE is unavailable, run:
 
 ```bash
-./Handess-Wallet-0.3.5-x86_64.AppImage --appimage-extract-and-run
+./Handess-Wallet-0.3.6-x86_64.AppImage --appimage-extract-and-run
 ```
 
 The setup wizard can be re-run later from **Settings → Node & HSD setup**.
 
-### Upgrading from 0.3.4
+### Upgrading from 0.3.5
 
-There is **no auto-updater**. Download and install 0.3.5 on both PCs. Wallet data and HSD data live outside the install directory and are preserved. Back up your seed phrase first.
+There is **no auto-updater**. Download and install 0.3.6 on both PCs. Wallet data and HSD data live outside the install directory and are preserved. Back up your seed phrase first.
 
-For swaps already accepted before 0.3.5, update the **DGB-side** PC first. It will pick up the existing HNS terms and funding events. The HNS side should also be updated before starting new swaps.
-
-If your node is already configured, the wizard is skipped and your existing HSD settings remain in use.
+For a swap that is already **HNS Locked**, update the DGB-side PC to 0.3.6 and click **Fund DGB HTLC** again. The previously rejected DGB transaction was not broadcast, so the DGB UTXO was not spent.
 
 ---
 
@@ -114,7 +112,7 @@ If your node is already configured, the wizard is skipped and your existing HSD 
 ### Windows (PowerShell)
 
 ```powershell
-Get-FileHash .\Handess-Wallet-0.3.5.msi -Algorithm SHA256
+Get-FileHash .\Handess-Wallet-0.3.6.msi -Algorithm SHA256
 Get-FileHash .\Handess-HSD-Runtime-8.0.0-win-x64.zip -Algorithm SHA256
 ```
 
@@ -128,14 +126,12 @@ The same checksums are attached to the release as `SHA256SUMS.txt`.
 
 ---
 
-## What is in 0.3.5
+## What is in 0.3.6
 
-- **Swap event synchronization fixed** — swap terms, funding, secret, and status events now use the shared offer ID instead of the initiator’s local swap ID. The DGB side can resolve the events and progress past **Accepted**.
-- **Existing HNS → DGB swaps recover** — after updating the DGB-side PC, the monitor can apply the already-published terms and HNS funding events.
-- **Everything from 0.3.4**, including the pure-JS SHA3 fix for HNS HTLC/escrow derivation and the `Digest method not supported` fix.
+- **DGB signing fixed** — DGB HTLC funding, claim, and refund transactions now sign the raw transaction sighash. The previous build signed SHA256(sighash) because Noble v2 prehashes by default, and DigiByte nodes rejected the invalid signature.
+- **Everything from 0.3.5**, including the shared-offer-ID swap event fix that lets the DGB side apply terms and HNS funding.
+- **Everything from 0.3.4**, including the pure-JS SHA3 fix for HNS HTLC/escrow address derivation.
 - **Everything from 0.3.3**, including the DGB Electrum notification crash fix, marketplace transfer detection fixes, Linux packages, the DGB WIF QR, Finalize All, per-name transaction-history rows, received-name fee handling, and copyable transaction hashes.
-
-> Older **DGB → HNS** swaps accepted before 0.3.5 may still be stuck if the HNS side already published terms under its old local ID. Re-accept those swaps with both PCs on 0.3.5.
 
 ---
 

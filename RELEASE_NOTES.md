@@ -1,24 +1,24 @@
-# Handess Wallet 0.3.5 — Swap Synchronization Hotfix
+# Handess Wallet 0.3.6 — DGB Signing Hotfix
 
-Self-custody Handshake wallet, domain CRM, peer-to-peer marketplace, and HNS ↔ DGB atomic swaps. This release fixes swap event synchronization between the two PCs: the DGB side now applies the HNS side’s terms and funding events and can continue the swap.
+Self-custody Handshake wallet, domain CRM, peer-to-peer marketplace, and HNS ↔ DGB atomic swaps. This release fixes DGB transaction signing, which was double-hashing the sighash and causing DigiByte nodes to reject DGB HTLC funding, claim, and refund transactions.
 
 ## Download
 
 ### Windows x64
 
-- **Installer:** `Handess-Wallet-0.3.5.msi` (97.8 MB)
-- **MSI SHA-256:** `A9A7F4AB3EAC30502CCB1A8A1F13B2C0D3497B3C4DAC931CA6765D5C38381120`
+- **Installer:** `Handess-Wallet-0.3.6.msi` (97.8 MB)
+- **MSI SHA-256:** `3EE1F4FF7839CDCC02160365ED752C0EA052F206308579ECEE0F74444FDCA048`
 - **Optional HSD runtime:** `Handess-HSD-Runtime-8.0.0-win-x64.zip` (79.5 MB, Node.js 24.15.0 + hsd 8.0.0)
 - **Runtime SHA-256:** `332930EC7D336DD98F82408413FA539ED240D4B7976BE0D05B008C5C2BDBB8DA`
 
 ### Linux x64
 
-- **Portable AppImage:** `Handess-Wallet-0.3.5-x86_64.AppImage` (122.2 MB)
-- **AppImage SHA-256:** `BCFE55EBB5BD648C1015165C08D11D6C5BCA18AB4166745D7653865A39524B28`
-- **Ubuntu/Debian:** `Handess-Wallet-0.3.5-amd64.deb` (82.6 MB)
-- **Deb SHA-256:** `4E520CEFDBF576139E59E147EB03C251E3786EE92B5CFB8E666F2C20E09AD847`
-- **Fedora/RHEL:** `Handess-Wallet-0.3.5-x86_64.rpm` (81.0 MB)
-- **RPM SHA-256:** `F54CA9E953672CD825FE03D629CA979DA363AB978064A269EB27C5190E153905`
+- **Portable AppImage:** `Handess-Wallet-0.3.6-x86_64.AppImage` (122.2 MB)
+- **AppImage SHA-256:** `D18A332B576B5AEC90627ECBC50848FE723C7752C8418C8274290DC826536FD8`
+- **Ubuntu/Debian:** `Handess-Wallet-0.3.6-amd64.deb` (82.6 MB)
+- **Deb SHA-256:** `31EAB46A2EF22425D834C6E4ADEBF21DA121F249DD1B3ED16F1F5060D98D1965`
+- **Fedora/RHEL:** `Handess-Wallet-0.3.6-x86_64.rpm` (81.0 MB)
+- **RPM SHA-256:** `43A353B8745C9BDF860745FA2BB1767024BB6B09533E9E9854CC2C0D5100E05E`
 - **Optional HSD runtime:** `Handess-HSD-Runtime-8.0.0-linux-x64.zip` (53.3 MB, Node.js 24.15.0 + hsd 8.0.0)
 - **Linux runtime SHA-256:** `45BBB5B5BB8B1A9DC7AB9F5F1DBDAE9DB2F301EEE684D4EAC38A6BB1FD15DADE`
 
@@ -29,34 +29,34 @@ The app packages contain the wallet only. The optional runtime is downloaded sep
 ### Ubuntu / Debian
 
 ```bash
-sudo apt install ./Handess-Wallet-0.3.5-amd64.deb
+sudo apt install ./Handess-Wallet-0.3.6-amd64.deb
 handess-wallet
 ```
 
 ### Fedora / RHEL
 
 ```bash
-sudo dnf install ./Handess-Wallet-0.3.5-x86_64.rpm
+sudo dnf install ./Handess-Wallet-0.3.6-x86_64.rpm
 handess-wallet
 ```
 
 openSUSE may require allowing the unsigned package:
 
 ```bash
-sudo zypper install --allow-unsigned-rpm ./Handess-Wallet-0.3.5-x86_64.rpm
+sudo zypper install --allow-unsigned-rpm ./Handess-Wallet-0.3.6-x86_64.rpm
 ```
 
 ### AppImage
 
 ```bash
-chmod +x Handess-Wallet-0.3.5-x86_64.AppImage
-./Handess-Wallet-0.3.5-x86_64.AppImage
+chmod +x Handess-Wallet-0.3.6-x86_64.AppImage
+./Handess-Wallet-0.3.6-x86_64.AppImage
 ```
 
 If FUSE is unavailable:
 
 ```bash
-./Handess-Wallet-0.3.5-x86_64.AppImage --appimage-extract-and-run
+./Handess-Wallet-0.3.6-x86_64.AppImage --appimage-extract-and-run
 ```
 
 Ubuntu 24.04 may need `libfuse2t64` for the AppImage. The `.deb` is recommended on Ubuntu/Debian.
@@ -65,50 +65,49 @@ Linux packages are built on Ubuntu 22.04. Intended baseline: Ubuntu 22.04+, Debi
 
 ## What changed
 
-### Swap events now use the shared offer ID
+### DGB signatures now sign the raw sighash
 
-- Swap `TERMS`, `FUNDING`, `SECRET`, and `STATUS` events now use `swap.offer.id` instead of the local swap ID.
-- The acceptor’s local swap ID is generated and differs from the offerer’s local ID, so the DGB side previously failed to match the HNS side’s terms and funding events.
-- Incoming events are now resolved by either the local swap ID or the embedded offer ID.
+- `@noble/curves` v2 prehashes by default. The previous DGB signer passed an already-computed sighash, so it signed `SHA256(sighash)` instead of the sighash.
+- DigiByte nodes verify the raw sighash with libsecp256k1, so they rejected the signature with `mandatory-script-verify-flag-failed (Signature must be zero for failed CHECK(MULTI)SIG operation)`.
+- The DGB signer now uses `prehash: false`, fixing:
+  - DGB HTLC funding
+  - DGB HTLC claim
+  - DGB HTLC refund
+- The DGB signature tests now verify with libsecp256k1-compatible `tiny-secp256k1` instead of Noble’s prehash default.
 
-This fixes the DGB side being stuck at **Accepted** while the HNS side shows **Terms Exchanged → HNS Locked**.
+### Current HNS-locked swaps
 
-### Existing swaps
+- Update the DGB-side PC to 0.3.6 and click **Fund DGB HTLC** again.
+- The rejected DGB transaction was not broadcast, so the DGB UTXO was not spent.
 
-- Existing **HNS → DGB** swaps should recover after updating the DGB-side PC. The monitor will apply the already-published terms and HNS funding events.
-- Older **DGB → HNS** swaps accepted before 0.3.5 may still be stuck if the HNS side published terms under its old local ID. Re-accept those swaps with both PCs on 0.3.5.
+### Retained from 0.3.5
+
+- Swap events use the shared offer ID, so the DGB side applies terms and HNS funding and can progress past **Accepted**.
 
 ### Retained from 0.3.4
 
-- HNS HTLC and escrow address derivation now uses the bundled pure-JS SHA3-256 implementation instead of Node/OpenSSL, fixing `Digest method not supported` on the packaged Electron runtime.
+- HNS HTLC and escrow address derivation uses the bundled pure-JS SHA3-256 implementation, fixing `Digest method not supported` on the packaged Electron runtime.
 
-### Retained from 0.3.3
+### Retained from 0.3.3 and earlier
 
 - DGB Electrum header notifications no longer crash the main process.
 - Marketplace transfer detection no longer reports a pending transfer as cancelled.
 - Pay seller is enabled only after the name transfer is detected on-chain.
-- Payment to the seller is still allowed if the buyer finalized the name first.
-
-### Retained from 0.3.2 and earlier
-
 - Linux AppImage, `.deb`, and `.rpm` packages plus the Linux private HSD runtime.
-- DGB WIF QR, Finalize All, per-name History rows for batched finalizes, received-name fee handling, and clickable transaction hashes.
-- Exact-amount HNS sends with the fee added on top, the dark-mode transfer-address fix, and the first-run setup wizard.
+- DGB WIF QR, Finalize All, per-name History rows, received-name fee handling, clickable transaction hashes, exact-amount HNS sends, and the dark-mode transfer-address fix.
 
-## Upgrading from 0.3.4
+## Upgrading from 0.3.5
 
-There is **no auto-updater**. Download and install 0.3.5 on both PCs. Wallet data and HSD data live outside the install directory and are preserved. Back up your seed phrase first.
+There is **no auto-updater**. Download and install 0.3.6 on both PCs. Wallet data and HSD data live outside the install directory and are preserved. Back up your seed phrase first.
 
-For swaps already accepted before 0.3.5, update the **DGB-side** PC first. It will pick up the existing HNS terms and funding events. The HNS side should also be updated before starting new swaps.
-
-If your node is already configured, the setup wizard is skipped and your existing HSD settings remain in use.
+For a swap that is already **HNS Locked**, update the DGB-side PC, open the swap, and click **Fund DGB HTLC** again.
 
 ## Verify the downloads
 
 ### Windows (PowerShell)
 
 ```powershell
-Get-FileHash .\Handess-Wallet-0.3.5.msi -Algorithm SHA256
+Get-FileHash .\Handess-Wallet-0.3.6.msi -Algorithm SHA256
 Get-FileHash .\Handess-HSD-Runtime-8.0.0-win-x64.zip -Algorithm SHA256
 ```
 
