@@ -1,24 +1,26 @@
-# Handess Wallet 0.3.6 — DGB Signing Hotfix
+# Handess Wallet 0.3.7 — HNS Swap Payout Recovery
 
-Self-custody Handshake wallet, domain CRM, peer-to-peer marketplace, and HNS ↔ DGB atomic swaps. This release fixes DGB transaction signing, which was double-hashing the sighash and causing DigiByte nodes to reject DGB HTLC funding, claim, and refund transactions.
+Self-custody Handshake wallet, domain CRM, peer-to-peer marketplace, and HNS ↔ DGB atomic swaps. This release fixes HNS claim transaction encoding and makes HNS swap payouts auditable and recoverable: the DGB side now saves the HNS claim transaction and payout address, verifies the claim against the local HNS node after the swap completes, and can rebroadcast a dropped claim.
+
+The HNS payout from the first completed HNS ↔ DGB swap did not arrive because its claim transaction was rejected by hsd. The claim used transaction version 2, but hsd policy only accepts version 0, and it reversed the outpoint txid even though HNS serializes outpoints in display order. 0.3.7 corrects both. A corrected claim for that swap was broadcast and confirmed; the recovery controls below cover any swap still missing its payout.
 
 ## Download
 
 ### Windows x64
 
-- **Installer:** `Handess-Wallet-0.3.6.msi` (97.8 MB)
-- **MSI SHA-256:** `3EE1F4FF7839CDCC02160365ED752C0EA052F206308579ECEE0F74444FDCA048`
+- **Installer:** `Handess-Wallet-0.3.7.msi` (97.8 MB)
+- **MSI SHA-256:** `9608CAB91F24D304C0B20521D8BF2888D38DC9A12A5C88F405C5B715A8E581F4`
 - **Optional HSD runtime:** `Handess-HSD-Runtime-8.0.0-win-x64.zip` (79.5 MB, Node.js 24.15.0 + hsd 8.0.0)
 - **Runtime SHA-256:** `332930EC7D336DD98F82408413FA539ED240D4B7976BE0D05B008C5C2BDBB8DA`
 
 ### Linux x64
 
-- **Portable AppImage:** `Handess-Wallet-0.3.6-x86_64.AppImage` (122.2 MB)
-- **AppImage SHA-256:** `D18A332B576B5AEC90627ECBC50848FE723C7752C8418C8274290DC826536FD8`
-- **Ubuntu/Debian:** `Handess-Wallet-0.3.6-amd64.deb` (82.6 MB)
-- **Deb SHA-256:** `31EAB46A2EF22425D834C6E4ADEBF21DA121F249DD1B3ED16F1F5060D98D1965`
-- **Fedora/RHEL:** `Handess-Wallet-0.3.6-x86_64.rpm` (81.0 MB)
-- **RPM SHA-256:** `43A353B8745C9BDF860745FA2BB1767024BB6B09533E9E9854CC2C0D5100E05E`
+- **Portable AppImage:** `Handess-Wallet-0.3.7-x86_64.AppImage` (122.3 MB)
+- **AppImage SHA-256:** `B22080AD80227870B4D35BE6C174096E48DFE1B4752BA46179030A945495E89C`
+- **Ubuntu/Debian:** `Handess-Wallet-0.3.7-amd64.deb` (82.6 MB)
+- **Deb SHA-256:** `8E037DF5D98F24C590F6B77C93AEBE995E0CA160BF13B8649C05CB0E3B429995`
+- **Fedora/RHEL:** `Handess-Wallet-0.3.7-x86_64.rpm` (81.0 MB)
+- **RPM SHA-256:** `AFD4AD0FDDD9F0F81DFFC1005399BFE72BC54ADC2C990171903E1AB1BABDA68A`
 - **Optional HSD runtime:** `Handess-HSD-Runtime-8.0.0-linux-x64.zip` (53.3 MB, Node.js 24.15.0 + hsd 8.0.0)
 - **Linux runtime SHA-256:** `45BBB5B5BB8B1A9DC7AB9F5F1DBDAE9DB2F301EEE684D4EAC38A6BB1FD15DADE`
 
@@ -29,34 +31,34 @@ The app packages contain the wallet only. The optional runtime is downloaded sep
 ### Ubuntu / Debian
 
 ```bash
-sudo apt install ./Handess-Wallet-0.3.6-amd64.deb
+sudo apt install ./Handess-Wallet-0.3.7-amd64.deb
 handess-wallet
 ```
 
 ### Fedora / RHEL
 
 ```bash
-sudo dnf install ./Handess-Wallet-0.3.6-x86_64.rpm
+sudo dnf install ./Handess-Wallet-0.3.7-x86_64.rpm
 handess-wallet
 ```
 
 openSUSE may require allowing the unsigned package:
 
 ```bash
-sudo zypper install --allow-unsigned-rpm ./Handess-Wallet-0.3.6-x86_64.rpm
+sudo zypper install --allow-unsigned-rpm ./Handess-Wallet-0.3.7-x86_64.rpm
 ```
 
 ### AppImage
 
 ```bash
-chmod +x Handess-Wallet-0.3.6-x86_64.AppImage
-./Handess-Wallet-0.3.6-x86_64.AppImage
+chmod +x Handess-Wallet-0.3.7-x86_64.AppImage
+./Handess-Wallet-0.3.7-x86_64.AppImage
 ```
 
 If FUSE is unavailable:
 
 ```bash
-./Handess-Wallet-0.3.6-x86_64.AppImage --appimage-extract-and-run
+./Handess-Wallet-0.3.7-x86_64.AppImage --appimage-extract-and-run
 ```
 
 Ubuntu 24.04 may need `libfuse2t64` for the AppImage. The `.deb` is recommended on Ubuntu/Debian.
@@ -65,20 +67,57 @@ Linux packages are built on Ubuntu 22.04. Intended baseline: Ubuntu 22.04+, Debi
 
 ## What changed
 
-### DGB signatures now sign the raw sighash
+### HNS claim transactions are now valid
 
-- `@noble/curves` v2 prehashes by default. The previous DGB signer passed an already-computed sighash, so it signed `SHA256(sighash)` instead of the sighash.
-- DigiByte nodes verify the raw sighash with libsecp256k1, so they rejected the signature with `mandatory-script-verify-flag-failed (Signature must be zero for failed CHECK(MULTI)SIG operation)`.
-- The DGB signer now uses `prehash: false`, fixing:
-  - DGB HTLC funding
-  - DGB HTLC claim
-  - DGB HTLC refund
-- The DGB signature tests now verify with libsecp256k1-compatible `tiny-secp256k1` instead of Noble’s prehash default.
+- **Transaction version:** hsd sets `MAX_TX_VERSION = 0` in its mempool policy. HNS claim, refund, and escrow transactions now use version 0. The previous build used version 2, so nodes rejected claims as `nonstandard` with `reason=version`.
+- **Outpoint byte order:** HNS outpoints serialize the txid in display order. The previous builder reversed the txid the way Bitcoin does, so the input pointed at a non-existent outpoint and the node treated the claim as an orphan even after the version was fixed.
+- Both issues are fixed for HTLC claims, HTLC refunds, and 2-of-3 escrow spends.
+- Regression tests assert version 0, standardness, and correct outpoint encoding.
 
-### Current HNS-locked swaps
+These two bugs are why the completed DGB → HNS swap's claim never reached the HNS chain, even though the swap was marked completed. The HNS HTLC remained funded and was recovered with a corrected claim.
 
-- Update the DGB-side PC to 0.3.6 and click **Fund DGB HTLC** again.
-- The rejected DGB transaction was not broadcast, so the DGB UTXO was not spent.
+### HNS claim details are saved
+
+When the DGB side claims an HNS HTLC, the app now records:
+
+- the claim transaction ID
+- the HNS payout address
+- the claim amount
+- the broadcast time
+- the raw signed claim transaction
+
+**My Swaps** shows the claim transaction, its status, the receiving address, and the amount for the completed swap.
+
+### Claims are verified against the HNS node
+
+- The swap monitor re-checks the HNS claim during status refreshes, including after the swap is marked completed.
+- The claim is shown as **broadcast**, **confirmed**, or **not found**.
+- A confirmed claim is never marked missing or offered for rebroadcast, even if the node connection is temporarily unavailable.
+- If it is confirmed, **HNS received at** shows the exact address that was paid and **HNS claim amount** shows the value.
+- If that address belongs to another HNS wallet on the same PC, switch to that wallet. The payout is not lost; it was sent to the address recorded by the claim.
+
+Previously, completed swaps were skipped by the monitor, so a claim that was dropped before mining was never noticed.
+
+### Dropped claims can be rebroadcast
+
+- If the HNS node cannot find the claim transaction for about two minutes, the swap marks it **not found** and enables **Rebroadcast HNS Claim**.
+- Rebroadcast rebuilds the claim with the same HTLC secret. It pays the destination recorded by the swap when one is known. For older swaps with no recorded destination, it pays the **currently selected HNS wallet**.
+- Rebroadcast is only allowed while the HNS HTLC is still funded and has enough confirmations.
+
+### Recovering the recent missing HNS payout
+
+1. Install 0.3.7 on the **DGB-side PC**. The HNS-side PC does not need this update to recover the payout.
+2. Open **My Swaps** and expand the completed swap.
+3. Read the **HNS claim** transaction and the **HNS received at** address.
+4. If the claim is **confirmed**, the HNS is at that address. If it is not the wallet currently selected, switch to the matching HNS wallet.
+5. If the claim is **not found**, select the HNS wallet that should receive the swap, then click **Rebroadcast HNS Claim**. 0.3.7 rebuilds the claim with the corrected version and outpoint encoding.
+6. If the payout still does not appear, open an issue with the claim transaction ID and destination address.
+
+**Never post seed phrases, private keys, WIFs, or passphrases.**
+
+### Retained from 0.3.6
+
+- DGB HTLC funding, claim, and refund transactions sign the raw sighash. The previous build signed `SHA256(sighash)` because Noble v2 prehashes by default, and DigiByte nodes rejected the invalid signature.
 
 ### Retained from 0.3.5
 
@@ -96,18 +135,18 @@ Linux packages are built on Ubuntu 22.04. Intended baseline: Ubuntu 22.04+, Debi
 - Linux AppImage, `.deb`, and `.rpm` packages plus the Linux private HSD runtime.
 - DGB WIF QR, Finalize All, per-name History rows, received-name fee handling, clickable transaction hashes, exact-amount HNS sends, and the dark-mode transfer-address fix.
 
-## Upgrading from 0.3.5
+## Upgrading from 0.3.6
 
-There is **no auto-updater**. Download and install 0.3.6 on both PCs. Wallet data and HSD data live outside the install directory and are preserved. Back up your seed phrase first.
+There is **no auto-updater**. Download and install 0.3.7. Wallet data, swap history, and HSD data live outside the install directory and are preserved. Back up your seed phrase first.
 
-For a swap that is already **HNS Locked**, update the DGB-side PC, open the swap, and click **Fund DGB HTLC** again.
+For a completed swap whose HNS payout is missing, update the **DGB-side PC** and use the claim details and **Rebroadcast HNS Claim** action described above.
 
 ## Verify the downloads
 
 ### Windows (PowerShell)
 
 ```powershell
-Get-FileHash .\Handess-Wallet-0.3.6.msi -Algorithm SHA256
+Get-FileHash .\Handess-Wallet-0.3.7.msi -Algorithm SHA256
 Get-FileHash .\Handess-HSD-Runtime-8.0.0-win-x64.zip -Algorithm SHA256
 ```
 
@@ -138,7 +177,7 @@ The Windows installer is **unsigned**. If SmartScreen appears, choose **More inf
 - Ubuntu 24.04 AppImage may need `libfuse2t64`.
 - No auto-updater; install new versions manually.
 - The app package does not bundle Node.js or hsd; the optional runtime is downloaded separately or selected as a local zip.
-- No funded end-to-end swap or escrow trade has completed on both chains yet; test with small amounts.
+- A funded HNS ↔ DGB swap has completed end-to-end, but payout delivery can still require the recovery workflow above. Use small amounts where possible. Escrow has not completed a funded end-to-end trade on both chains yet.
 - Escrow arbiter trust is real; lost keys can deadlock funds. The arbiter does not receive automatic notifications; dispute PSBT delivery is manual.
 - Marketplace and swaps depend on Nostr relays.
 - DGB support is for swaps only.
