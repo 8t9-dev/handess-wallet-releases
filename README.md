@@ -14,18 +14,18 @@ This repository contains release downloads only. The source is not published.
 
 | Version | Platform | File | SHA-256 |
 | --- | --- | --- | --- |
-| **0.3.7 beta** | Windows 10/11 x64 | **[Handess-Wallet-0.3.7.msi](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.7/Handess-Wallet-0.3.7.msi)** (97.8 MB) | `9608CAB91F24D304C0B20521D8BF2888D38DC9A12A5C88F405C5B715A8E581F4` |
-| **0.3.7 beta** | Linux x64 (portable) | **[Handess-Wallet-0.3.7-x86_64.AppImage](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.7/Handess-Wallet-0.3.7-x86_64.AppImage)** (122.3 MB) | `B22080AD80227870B4D35BE6C174096E48DFE1B4752BA46179030A945495E89C` |
-| **0.3.7 beta** | Ubuntu / Debian x64 | **[Handess-Wallet-0.3.7-amd64.deb](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.7/Handess-Wallet-0.3.7-amd64.deb)** (82.6 MB) | `8E037DF5D98F24C590F6B77C93AEBE995E0CA160BF13B8649C05CB0E3B429995` |
-| **0.3.7 beta** | Fedora / RHEL x64 | **[Handess-Wallet-0.3.7-x86_64.rpm](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.7/Handess-Wallet-0.3.7-x86_64.rpm)** (81.0 MB) | `AFD4AD0FDDD9F0F81DFFC1005399BFE72BC54ADC2C990171903E1AB1BABDA68A` |
-| **Optional runtime** | Windows x64 | **[Handess-HSD-Runtime-8.0.0-win-x64.zip](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.7/Handess-HSD-Runtime-8.0.0-win-x64.zip)** (79.5 MB) | `332930EC7D336DD98F82408413FA539ED240D4B7976BE0D05B008C5C2BDBB8DA` |
-| **Optional runtime** | Linux x64 | **[Handess-HSD-Runtime-8.0.0-linux-x64.zip](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.7/Handess-HSD-Runtime-8.0.0-linux-x64.zip)** (53.3 MB) | `45BBB5B5BB8B1A9DC7AB9F5F1DBDAE9DB2F301EEE684D4EAC38A6BB1FD15DADE` |
+| **0.3.8 beta** | Windows 10/11 x64 | **[Handess-Wallet-0.3.8.msi](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.8/Handess-Wallet-0.3.8.msi)** (97.8 MB) | `E3B2E0DD7AF8281AF6CD96C23E5423007749024FC2B476E688EB1F66400072DF` |
+| **0.3.8 beta** | Linux x64 (portable) | **[Handess-Wallet-0.3.8-x86_64.AppImage](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.8/Handess-Wallet-0.3.8-x86_64.AppImage)** (122.2 MB) | `143EFB0D109942C1B036601FFAD65E715E0CBCF272D784E60DA17F1B75B38255` |
+| **0.3.8 beta** | Ubuntu / Debian x64 | **[Handess-Wallet-0.3.8-amd64.deb](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.8/Handess-Wallet-0.3.8-amd64.deb)** (82.6 MB) | `5A3D8F85E742A8BA0079AB1643A63A0B2840D61118901DE53AF9A2A2E57F867D` |
+| **0.3.8 beta** | Fedora / RHEL x64 | **[Handess-Wallet-0.3.8-x86_64.rpm](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.8/Handess-Wallet-0.3.8-x86_64.rpm)** (81.0 MB) | `678490CA6258E16115BE2D1851DC0F19A95F9ED355D7E8B5A3A3418E75E76528` |
+| **Optional runtime** | Windows x64 | **[Handess-HSD-Runtime-8.0.0-win-x64.zip](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.8/Handess-HSD-Runtime-8.0.0-win-x64.zip)** (79.5 MB) | `332930EC7D336DD98F82408413FA539ED240D4B7976BE0D05B008C5C2BDBB8DA` |
+| **Optional runtime** | Linux x64 | **[Handess-HSD-Runtime-8.0.0-linux-x64.zip](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.8/Handess-HSD-Runtime-8.0.0-linux-x64.zip)** (53.3 MB) | `45BBB5B5BB8B1A9DC7AB9F5F1DBDAE9DB2F301EEE684D4EAC38A6BB1FD15DADE` |
 
 The app packages contain the wallet only. The optional runtime contains Node.js 24.15.0 and hsd 8.0.0 and is used by the setup wizard for **New to Handshake** users. Existing Node.js or HSD installations are detected and can be reused.
 
 All files are also on the [Releases](https://github.com/8t9-dev/handess-wallet-releases/releases) page.
 
-> **0.3.6 and earlier are superseded.** 0.3.7 adds HNS claim diagnostics and recovery. It records the HNS swap payout transaction and destination address, verifies the claim against the local HNS node even after the swap is completed, and can rebroadcast a dropped claim. 0.3.6 fixed DGB transaction signing, which was double-hashing the sighash and causing DigiByte nodes to reject DGB HTLC funding, claim, and refund transactions.
+> **0.3.7 and earlier are superseded.** 0.3.8 fixes the swap progress display, adds an opt-in auto-complete mode for accepted swaps, and adds a DGB reconnect button on the Swap page. 0.3.7 added HNS claim diagnostics and recovery, including the HNS transaction format fix that made claims valid. 0.3.6 fixed DGB transaction signing, which was double-hashing the sighash and causing DigiByte nodes to reject DGB HTLC funding, claim, and refund transactions.
 
 ---
 
@@ -67,43 +67,45 @@ New users can use the setup wizard to install a private Node.js + HSD runtime. E
 ### Ubuntu / Debian
 
 ```bash
-sudo apt install ./Handess-Wallet-0.3.7-amd64.deb
+sudo apt install ./Handess-Wallet-0.3.8-amd64.deb
 handess-wallet
 ```
 
 ### Fedora / RHEL
 
 ```bash
-sudo dnf install ./Handess-Wallet-0.3.7-x86_64.rpm
+sudo dnf install ./Handess-Wallet-0.3.8-x86_64.rpm
 handess-wallet
 ```
 
 openSUSE may require allowing the unsigned package:
 
 ```bash
-sudo zypper install --allow-unsigned-rpm ./Handess-Wallet-0.3.7-x86_64.rpm
+sudo zypper install --allow-unsigned-rpm ./Handess-Wallet-0.3.8-x86_64.rpm
 ```
 
 ### AppImage (portable)
 
 ```bash
-chmod +x Handess-Wallet-0.3.7-x86_64.AppImage
-./Handess-Wallet-0.3.7-x86_64.AppImage
+chmod +x Handess-Wallet-0.3.8-x86_64.AppImage
+./Handess-Wallet-0.3.8-x86_64.AppImage
 ```
 
 If FUSE is unavailable, run:
 
 ```bash
-./Handess-Wallet-0.3.7-x86_64.AppImage --appimage-extract-and-run
+./Handess-Wallet-0.3.8-x86_64.AppImage --appimage-extract-and-run
 ```
 
 The setup wizard can be re-run later from **Settings → Node & HSD setup**.
 
-### Upgrading from 0.3.6
+### Upgrading from 0.3.7
 
-There is **no auto-updater**. Download and install 0.3.7. Wallet data, swap history, and HSD data live outside the install directory and are preserved. Back up your seed phrase first.
+There is **no auto-updater**. Download and install 0.3.8 on both PCs. Wallet data, swap history, and HSD data live outside the install directory and are preserved. Back up your seed phrase first.
 
-If a completed swap's HNS payout is missing, update the **DGB-side PC** to 0.3.7. Open **My Swaps**, expand the completed swap, and check the **HNS claim** transaction and **HNS received at** address. If the claim is confirmed in a different HNS wallet, switch to that wallet. If it is marked **not found**, select the intended HNS wallet and click **Rebroadcast HNS Claim**.
+0.3.8 adds the **Auto-complete swaps** toggle on the Swap page. It applies to offers accepted while the toggle is on; existing accepted swaps can be enabled individually from **My Swaps**. Both PCs need 0.3.8 and the toggle enabled for a fully hands-off swap. HNS funding pauses if the HNS wallet is locked; enter the passphrase on the swap to continue.
+
+The DGB connection refresh icon on the Swap page reconnects to the saved DGB server without requiring Disconnect/Connect.
 
 ---
 
@@ -112,7 +114,7 @@ If a completed swap's HNS payout is missing, update the **DGB-side PC** to 0.3.7
 ### Windows (PowerShell)
 
 ```powershell
-Get-FileHash .\Handess-Wallet-0.3.7.msi -Algorithm SHA256
+Get-FileHash .\Handess-Wallet-0.3.8.msi -Algorithm SHA256
 Get-FileHash .\Handess-HSD-Runtime-8.0.0-win-x64.zip -Algorithm SHA256
 ```
 
@@ -126,13 +128,14 @@ The same checksums are attached to the release as `SHA256SUMS.txt`.
 
 ---
 
-## What is in 0.3.7
+## What is in 0.3.8
 
-- **HNS transaction format fixed** — HNS claim, refund, and escrow transactions now use transaction version 0, as required by hsd's `MAX_TX_VERSION = 0` policy, and HNS outpoints serialize the txid in display order. The previous build used version 2 and reversed the outpoint txid, so claims were rejected as nonstandard (`reason=version`) or treated as orphans. This is why the completed swap's HNS payout did not arrive.
-- **HNS claim diagnostics** — when the DGB side claims an HNS HTLC, the app now saves the claim transaction ID, payout address, amount, broadcast time, and raw signed transaction.
-- **On-chain claim verification** — the HNS claim is re-checked against the local HNS node during status refreshes, including after the swap is marked completed. The swap shows **broadcast**, **confirmed**, or **not found**. A confirmed claim is never marked missing or offered for rebroadcast.
-- **HNS payout recovery** — if the claim transaction is no longer visible to the node, the swap offers **Rebroadcast HNS Claim**. The app rebuilds the claim with the saved HTLC secret and destination when known; otherwise the claim pays the **currently selected HNS wallet**.
-- **Missing-payout guidance** — the swap shows the exact **HNS received at** address so a payout that landed in a different local HNS wallet can be identified.
+- **Completed progress fixed** — the final **Completed** step now shows a green check instead of an endless spinner after both HTLCs are spent.
+- **Auto-complete swaps** — an opt-in toggle on the Swap page automatically locks and claims the local side of an accepted swap. Manual accept is still required. HNS funding pauses when the wallet is locked and resumes after the passphrase is entered; refunds stay manual.
+- **Per-swap auto opt-in** — the global toggle applies to new accepts. Existing accepted swaps show **Enable auto-complete for this swap**.
+- **DGB reconnect button** — the refresh icon on the Swap page reconnects to the saved DGB server and refreshes the address, balance, offers, and swaps.
+- **HNS payout warning** — the UI states that DGB-side swaps claim HNS to the currently selected HNS wallet, so the correct wallet can be selected before enabling auto-complete.
+- **Everything from 0.3.7**, including the HNS transaction format fix, claim diagnostics, on-chain verification, and rebroadcast recovery.
 - **Everything from 0.3.6**, including the DGB signing fix that signs the raw sighash instead of a double hash.
 - **Everything from 0.3.5**, including the shared-offer-ID swap event fix that lets the DGB side apply terms and HNS funding.
 - **Everything from 0.3.4**, including the pure-JS SHA3 fix for HNS HTLC/escrow address derivation.
@@ -151,7 +154,9 @@ The same checksums are attached to the release as `SHA256SUMS.txt`.
 - **No bundled Node.js or hsd in the app package.** The setup wizard can download an optional private runtime; existing Node.js/HSD installations can be reused.
 - **No auto-updater.** Check the Releases page for new versions and install them manually.
 - **A fresh HSD chain is large and slow to sync.** Reuse existing HSD data where possible.
-- **Swaps are beta.** A funded HNS ↔ DGB swap has completed end-to-end, but payout delivery can still require the recovery workflow above. Use small amounts where possible. Escrow has not completed a funded end-to-end trade on both chains yet.
+- **Swaps are beta.** A funded HNS ↔ DGB swap has completed end-to-end, but payout delivery can still require the recovery workflow from the 0.3.7 release notes. Use small amounts where possible. Escrow has not completed a funded end-to-end trade on both chains yet.
+- **Auto-complete is opt-in and local.** Both PCs must run 0.3.8 and enable the toggle for a hands-off swap. HNS funding pauses if the wallet is locked; the passphrase must be entered once. Refunds remain manual, and offers are never auto-accepted.
+- **DGB-side payouts use the selected HNS wallet.** Auto-complete claims HNS to the currently selected HNS wallet. Select the intended wallet before enabling it.
 - **Escrow is non-custodial but not risk-free.** The arbiter can collude with either party, lost keys can deadlock funds, and there is no automatic arbiter notification.
 - **Marketplace and swaps depend on Nostr relays.**
 - **DGB support is for swaps only.** There is no general DGB send screen.
