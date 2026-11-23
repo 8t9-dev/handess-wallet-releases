@@ -1,6 +1,6 @@
 # Handess Wallet — Third-Party Notices
 
-**Applies to:** Handess Wallet 0.3.9 beta  
+**Applies to:** Handess Wallet 0.3.10 beta  
 **Generated:** 2026-11-23  
 **Generated from:** `package-lock.json` and the installed package license files
 
