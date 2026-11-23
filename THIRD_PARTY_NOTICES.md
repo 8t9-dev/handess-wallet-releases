@@ -1,17 +1,17 @@
 # Handess Wallet — Third-Party Notices
 
-**Applies to:** Handess Wallet 0.3.2 beta  
-**Generated:** 2026-11-01  
+**Applies to:** Handess Wallet 0.3.9 beta  
+**Generated:** 2026-11-23  
 **Generated from:** `package-lock.json` and the installed package license files
 
-Handess Wallet is proprietary software distributed under the Handess Wallet End User License Agreement in `LICENSE`. This file provides attribution and license notices for third-party software included in the application. It does not change the Handess Wallet EULA. Each third-party component remains governed by its own license.
+Handess Wallet is free software distributed under the GNU General Public License, version 3 or (at your option) any later version (`GPL-3.0-or-later`), in `LICENSE`. This file provides attribution and license notices for third-party software included in the application. It does not change the Handess Wallet license. Each third-party component remains governed by its own license.
 
 ## Runtime and installer components
 
 - **Electron 28** — MIT License. The Electron license text is installed as `LICENSE.electron.txt` in the application directory.
 - **Chromium** — BSD-3-Clause and other licenses. The complete Chromium third-party notices are installed as `LICENSES.chromium.html` in the application directory.
-- **Node.js** — not included in the installer package. The optional setup runtime contains Node.js 24.15.0; its license is included in the runtime zip as `LICENSE-Node.txt`.
-- **hsd** — not included in the installer package. The optional setup runtime contains hsd 8.0.0; its MIT license is included in the runtime zip as `hsd/LICENSE`.
+- **Node.js** — not bundled with the installer. If you install Node.js separately, its license applies.
+- **hsd** — not bundled with the installer. If you install `hsd` separately, its MIT license applies.
 
 ## Included packages
 
@@ -29,8 +29,10 @@ Handess Wallet is proprietary software distributed under the Handess Wallet End 
 | `@scure/bip39` | 2.0.1 | MIT |
 | `@tanstack/react-table` | 8.21.3 | MIT |
 | `@tanstack/table-core` | 8.21.3 | MIT |
+| `@types/node` | 18.19.130 | MIT |
 | `@types/prop-types` | 15.7.15 | MIT |
 | `@types/react` | 18.3.28 | MIT |
+| `@types/yauzl` | 2.10.3 | MIT |
 | `ajv` | 8.18.0 | MIT |
 | `ajv-formats` | 2.1.1 | MIT |
 | `atomically` | 1.7.0 | MIT |
@@ -46,6 +48,7 @@ Handess Wallet is proprietary software distributed under the Handess Wallet End 
 | `bs58check` | 4.0.0 | MIT |
 | `bsert` | 0.0.13 | MIT |
 | `bsock` | 0.1.11 | MIT |
+| `buffer-crc32` | 0.2.13 | MIT |
 | `bufferutil` | 4.1.0 | MIT |
 | `clsx` | 2.1.1 | MIT |
 | `conf` | 10.2.0 | MIT |
@@ -54,9 +57,11 @@ Handess Wallet is proprietary software distributed under the Handess Wallet End 
 | `date-fns` | 3.6.0 | MIT |
 | `debounce-fn` | 4.0.0 | MIT |
 | `debug` | 2.6.9 | MIT |
+| `debug` | 4.4.3 | MIT |
 | `dot-prop` | 6.0.1 | MIT |
 | `ecpair` | 3.0.1 | MIT |
 | `electron-store` | 8.2.0 | MIT |
+| `end-of-stream` | 1.4.5 | MIT |
 | `env-paths` | 2.2.1 | MIT |
 | `es5-ext` | 0.10.64 | ISC |
 | `es6-iterator` | 2.0.3 | MIT |
@@ -64,9 +69,12 @@ Handess Wallet is proprietary software distributed under the Handess Wallet End 
 | `esniff` | 2.0.1 | ISC |
 | `event-emitter` | 0.3.5 | MIT |
 | `ext` | 1.7.0 | ISC |
+| `extract-zip` | 2.0.1 | BSD-2-Clause |
 | `fast-deep-equal` | 3.1.3 | MIT |
 | `fast-uri` | 3.1.0 | BSD-3-Clause |
+| `fd-slicer` | 1.1.0 | MIT |
 | `find-up` | 3.0.0 | MIT |
+| `get-stream` | 5.2.0 | MIT |
 | `hs-client` | 0.0.13 | MIT |
 | `is-obj` | 2.0.0 | MIT |
 | `is-typedarray` | 1.0.0 | MIT |
@@ -79,16 +87,20 @@ Handess Wallet is proprietary software distributed under the Handess Wallet End 
 | `mimic-fn` | 2.1.0 | MIT |
 | `mimic-fn` | 3.1.0 | MIT |
 | `ms` | 2.0.0 | MIT |
+| `ms` | 2.1.3 | MIT |
 | `next-tick` | 1.1.0 | ISC |
 | `node-gyp-build` | 4.8.4 | MIT |
 | `nostr-tools` | 2.23.5 | Unlicense |
 | `nostr-wasm` | 0.1.0 | MIT |
+| `once` | 1.4.0 | ISC |
 | `onetime` | 5.1.2 | MIT |
 | `p-limit` | 2.3.0 | MIT |
 | `p-locate` | 3.0.0 | MIT |
 | `p-try` | 2.2.0 | MIT |
 | `path-exists` | 3.0.0 | MIT |
+| `pend` | 1.2.0 | MIT |
 | `pkg-up` | 3.1.0 | MIT |
+| `pump` | 3.0.4 | MIT |
 | `qrcode.react` | 3.2.0 | ISC |
 | `react` | 18.3.1 | MIT |
 | `react-dom` | 18.3.1 | MIT |
@@ -106,17 +118,20 @@ Handess Wallet is proprietary software distributed under the Handess Wallet End 
 | `uint8array-tools` | 0.0.7 | MIT |
 | `uint8array-tools` | 0.0.8 | MIT |
 | `uint8array-tools` | 0.0.9 | MIT |
+| `undici-types` | 5.26.5 | MIT |
 | `use-sync-external-store` | 1.6.0 | MIT |
 | `utf-8-validate` | 5.0.10 | MIT |
 | `valibot` | 1.4.1 | MIT |
 | `varuint-bitcoin` | 2.0.0 | MIT |
 | `websocket` | 1.0.35 | Apache-2.0 |
 | `wif` | 5.0.0 | MIT |
+| `wrappy` | 1.0.2 | ISC |
 | `ws` | 8.21.1 | MIT |
 | `yaeti` | 0.0.6 | MIT |
+| `yauzl` | 2.10.0 | MIT |
 | `zustand` | 4.5.7 | MIT |
 
-**Total packages:** 98
+**Total packages:** 113
 
 ## License texts
 
@@ -295,7 +310,7 @@ SOFTWARE.
 
 ### 7. MIT
 
-**Used by:** @types/prop-types@15.7.15, @types/react@18.3.28
+**Used by:** @types/node@18.19.130, @types/prop-types@15.7.15, @types/react@18.3.28, @types/yauzl@2.10.3
 
 ```text
 MIT License
@@ -661,6 +676,32 @@ THE SOFTWARE.
 
 ### 20. MIT
 
+**Used by:** buffer-crc32@0.2.13
+
+```text
+The MIT License
+
+Copyright (c) 2013 Brian J. Brennan
+
+Permission is hereby granted, free of charge, to any person obtaining a copy 
+of this software and associated documentation files (the "Software"), to deal in 
+the Software without restriction, including without limitation the rights to use, 
+copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the 
+Software, and to permit persons to whom the Software is furnished to do so, 
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all 
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR 
+PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+```
+
+### 21. MIT
+
 **Used by:** bufferutil@4.1.0, ws@8.21.1
 
 ```text
@@ -686,7 +727,7 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
-### 21. MIT
+### 22. MIT
 
 **Used by:** clsx@2.1.1
 
@@ -702,9 +743,9 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
-### 22. MIT
+### 23. MIT
 
-**Used by:** conf@10.2.0, debounce-fn@4.0.0, dot-prop@6.0.1, electron-store@8.2.0, onetime@5.1.2
+**Used by:** conf@10.2.0, debounce-fn@4.0.0, dot-prop@6.0.1, electron-store@8.2.0, get-stream@5.2.0, onetime@5.1.2
 
 ```text
 MIT License
@@ -718,7 +759,7 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
-### 23. MIT
+### 24. MIT
 
 **Used by:** csstype@3.2.3
 
@@ -744,7 +785,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### 24. ISC
+### 25. ISC
 
 **Used by:** d@1.0.2, es6-symbol@3.1.4, esniff@2.0.1
 
@@ -766,7 +807,7 @@ OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 ```
 
-### 25. MIT
+### 26. MIT
 
 **Used by:** date-fns@3.6.0
 
@@ -794,7 +835,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### 26. MIT
+### 27. MIT
 
 **Used by:** debug@2.6.9
 
@@ -819,7 +860,33 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
-### 27. MIT
+### 28. MIT
+
+**Used by:** debug@4.4.3
+
+```text
+(The MIT License)
+
+Copyright (c) 2014-2017 TJ Holowaychuk <tj@vision-media.ca>
+Copyright (c) 2018-2021 Josh Junon
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+and associated documentation files (the 'Software'), to deal in the Software without restriction,
+including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial
+portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+```
+
+### 29. MIT
 
 **Used by:** ecpair@3.0.1
 
@@ -847,7 +914,35 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### 28. MIT
+### 30. MIT
+
+**Used by:** end-of-stream@1.4.5, pump@3.0.4
+
+```text
+The MIT License (MIT)
+
+Copyright (c) 2014 Mathias Buus
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+```
+
+### 31. MIT
 
 **Used by:** env-paths@2.2.1, find-up@3.0.0, is-obj@2.0.0, locate-path@3.0.0, mimic-fn@2.1.0, mimic-fn@3.1.0, p-limit@2.3.0, p-locate@3.0.0, p-try@2.2.0, pkg-up@3.1.0
 
@@ -863,7 +958,7 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
-### 29. ISC
+### 32. ISC
 
 **Used by:** es5-ext@0.10.64
 
@@ -885,7 +980,7 @@ OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 ```
 
-### 30. MIT
+### 33. MIT
 
 **Used by:** es6-iterator@2.0.3
 
@@ -913,7 +1008,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
 
-### 31. MIT
+### 34. MIT
 
 **Used by:** event-emitter@0.3.5
 
@@ -939,7 +1034,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
 
-### 32. ISC
+### 35. ISC
 
 **Used by:** ext@1.7.0
 
@@ -961,7 +1056,37 @@ OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 ```
 
-### 33. MIT
+### 36. BSD-2-Clause
+
+**Used by:** extract-zip@2.0.1
+
+```text
+Copyright (c) 2014 Max Ogden and other contributors
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice, this
+  list of conditions and the following disclaimer.
+
+* Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+```
+
+### 37. MIT
 
 **Used by:** fast-deep-equal@3.1.3, json-schema-traverse@1.0.0
 
@@ -989,7 +1114,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### 34. BSD-3-Clause
+### 38. BSD-3-Clause
 
 **Used by:** fast-uri@3.1.0
 
@@ -1028,7 +1153,35 @@ The complete list of contributors can be found at:
 - https://github.com/garycourt/uri-js/graphs/contributors
 ```
 
-### 35. MIT
+### 39. MIT
+
+**Used by:** fd-slicer@1.1.0
+
+```text
+Copyright (c) 2014 Andrew Kelley
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation files
+(the "Software"), to deal in the Software without restriction,
+including without limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of the Software,
+and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+### 40. MIT
 
 **Used by:** is-typedarray@1.0.0
 
@@ -1053,7 +1206,7 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
-### 36. MIT
+### 41. MIT
 
 **Used by:** js-tokens@4.0.0
 
@@ -1081,7 +1234,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
 
-### 37. BSD-2-Clause
+### 42. BSD-2-Clause
 
 **Used by:** json-schema-typed@7.0.3
 
@@ -1114,7 +1267,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 ```
 
-### 38. MIT
+### 43. MIT
 
 **Used by:** loose-envify@1.4.0
 
@@ -1142,7 +1295,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
 
-### 39. ISC
+### 44. ISC
 
 **Used by:** lucide-react@0.303.0
 
@@ -1164,7 +1317,7 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 ```
 
-### 40. MIT
+### 45. MIT
 
 **Used by:** ms@2.0.0
 
@@ -1192,7 +1345,35 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### 41. ISC
+### 46. MIT
+
+**Used by:** ms@2.1.3
+
+```text
+The MIT License (MIT)
+
+Copyright (c) 2020 Vercel, Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+### 47. ISC
 
 **Used by:** next-tick@1.1.0
 
@@ -1214,7 +1395,7 @@ OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 ```
 
-### 42. MIT
+### 48. MIT
 
 **Used by:** node-gyp-build@4.8.4
 
@@ -1242,7 +1423,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
 
-### 43. Unlicense
+### 49. Unlicense
 
 **Used by:** nostr-tools@2.23.5
 
@@ -1273,7 +1454,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 For more information, please refer to <https://unlicense.org>
 ```
 
-### 44. MIT
+### 50. MIT
 
 **Used by:** nostr-wasm@0.1.0
 
@@ -1301,7 +1482,29 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### 45. MIT
+### 51. ISC
+
+**Used by:** once@1.4.0, semver@7.7.4, wrappy@1.0.2
+
+```text
+The ISC License
+
+Copyright (c) Isaac Z. Schlueter and Contributors
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR
+IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+```
+
+### 52. MIT
 
 **Used by:** path-exists@3.0.0
 
@@ -1329,7 +1532,37 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
 
-### 46. ISC
+### 53. MIT
+
+**Used by:** pend@1.2.0
+
+```text
+The MIT License (Expat)
+
+Copyright (c) 2014 Andrew Kelley
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation files
+(the "Software"), to deal in the Software without restriction,
+including without limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of the Software,
+and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+### 54. ISC
 
 **Used by:** qrcode.react@3.2.0
 
@@ -1354,7 +1587,7 @@ This product bundles QR Code Generator, which is available under a
 "MIT" license. For details, see src/third-party/qrcodegen.
 ```
 
-### 47. MIT
+### 55. MIT
 
 **Used by:** react-dom@18.3.1, react@18.3.1, scheduler@0.23.2
 
@@ -1382,7 +1615,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### 48. MIT
+### 56. MIT
 
 **Used by:** require-from-string@2.0.2
 
@@ -1410,29 +1643,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
 
-### 49. ISC
-
-**Used by:** semver@7.7.4
-
-```text
-The ISC License
-
-Copyright (c) Isaac Z. Schlueter and Contributors
-
-Permission to use, copy, modify, and/or distribute this software for any
-purpose with or without fee is hereby granted, provided that the above
-copyright notice and this permission notice appear in all copies.
-
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
-WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
-MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
-ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
-WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
-ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR
-IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-```
-
-### 50. MIT
+### 57. MIT
 
 **Used by:** tailwind-merge@2.6.1
 
@@ -1460,7 +1671,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### 51. MIT
+### 58. MIT
 
 **Used by:** tiny-secp256k1@2.2.4
 
@@ -1488,7 +1699,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### 52. ISC
+### 59. ISC
 
 **Used by:** type@2.7.3
 
@@ -1510,7 +1721,7 @@ OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 ```
 
-### 53. (MIT OR CC0-1.0)
+### 60. (MIT OR CC0-1.0)
 
 **Used by:** type-fest@2.19.0
 
@@ -1541,7 +1752,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### 54. MIT
+### 61. MIT
 
 **Used by:** typedarray-to-buffer@3.1.5
 
@@ -1569,7 +1780,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
 
-### 55. Apache-2.0
+### 62. Apache-2.0
 
 **Used by:** typescript@5.9.3
 
@@ -1631,7 +1842,7 @@ If the Work includes a "NOTICE" text file as part of its distribution, then any 
 END OF TERMS AND CONDITIONS
 ```
 
-### 56. MIT
+### 63. MIT
 
 **Used by:** uint8array-tools@0.0.7, uint8array-tools@0.0.8, uint8array-tools@0.0.9
 
@@ -1659,7 +1870,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### 57. MIT
+### 64. MIT
 
 **Used by:** use-sync-external-store@1.6.0
 
@@ -1687,7 +1898,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### 58. MIT
+### 65. MIT
 
 **Used by:** utf-8-validate@5.0.10
 
@@ -1724,7 +1935,7 @@ License: http://www.cl.cam.ac.uk/~mgk25/short-license.html
 """
 ```
 
-### 59. MIT
+### 66. MIT
 
 **Used by:** valibot@1.4.1
 
@@ -1740,7 +1951,7 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
-### 60. MIT
+### 67. MIT
 
 **Used by:** varuint-bitcoin@2.0.0
 
@@ -1771,7 +1982,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
 
-### 61. Apache-2.0
+### 68. Apache-2.0
 
 **Used by:** websocket@1.0.35
 
@@ -1954,7 +2165,7 @@ TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 END OF TERMS AND CONDITIONS
 ```
 
-### 62. MIT
+### 69. MIT
 
 **Used by:** wif@5.0.0
 
@@ -1982,7 +2193,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### 63. MIT
+### 70. MIT
 
 **Used by:** yaeti@0.0.6
 
@@ -2010,7 +2221,35 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
 
-### 64. MIT
+### 71. MIT
+
+**Used by:** yauzl@2.10.0
+
+```text
+The MIT License (MIT)
+
+Copyright (c) 2014 Josh Wolfe
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+### 72. MIT
 
 **Used by:** zustand@4.5.7
 
@@ -2037,6 +2276,12 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+## Packages without a bundled license file
+
+These packages declare a license in `package.json` but did not include a license text file in the installed package:
+
+- `undici-types@5.26.5` — MIT
 
 ## Electron
 
@@ -2066,46 +2311,11 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
-## Optional Handess HSD runtime
-
-The first-run setup wizard can download a separate, checksum-verified runtime containing Node.js 24.15.0 and hsd 8.0.0. It is not part of the Handess Wallet installer package and is installed into a private per-user folder only if selected.
-
-The runtime zip includes the full `LICENSE-Node.txt`, `hsd/LICENSE`, and a copy of this notices file. Node.js remains under the Node.js license (including its externally maintained libraries), and hsd remains under the MIT license below.
-
-```text
-hsd MIT License
-
-Copyright (c) 2014-2015, Fedor Indutny (https://github.com/indutny)
-Copyright (c) 2014-2018, Christopher Jeffrey (https://github.com/chjj)
-Copyright (c) 2014-2018, Bcoin Contributors (https://github.com/bcoin-org)
-Copyright (c) 2018, Handshake Contributors (https://github.com/handshake-org)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-```
-
-The complete Node.js license text is distributed in the optional runtime zip as `LICENSE-Node.txt` and is available at <https://github.com/nodejs/node/blob/v24.15.0/LICENSE>.
-
 ## Notes
 
 - This notices file is generated from the production dependency tree. Build-only tools are not included unless their code is distributed in the application.
 - The complete Chromium third-party notices are large and are installed separately as `LICENSES.chromium.html`; that file is the authoritative notice for Chromium and its bundled components.
 - If a package provides a separate NOTICE file, it is reproduced with that package's license text above.
-- This file is informational and does not modify the Handess Wallet EULA or any third-party license.
+- This file is informational and does not modify the Handess Wallet GPL license or any third-party license.
 
 **End of notices.**

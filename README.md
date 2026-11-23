@@ -6,7 +6,7 @@
 >
 > These packages are not code-signed and have not been independently audited. Windows SmartScreen will warn you. Linux packages are not GPG-signed. Do not use them with funds you cannot afford to lose.
 
-This repository contains release downloads only. The source is not published.
+This repository contains release downloads and metadata. The GPLv3 source code is published at <https://github.com/8t9-dev/handess-wallet>.
 
 ---
 
@@ -14,18 +14,18 @@ This repository contains release downloads only. The source is not published.
 
 | Version | Platform | File | SHA-256 |
 | --- | --- | --- | --- |
-| **0.3.8 beta** | Windows 10/11 x64 | **[Handess-Wallet-0.3.8.msi](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.8/Handess-Wallet-0.3.8.msi)** (97.8 MB) | `E3B2E0DD7AF8281AF6CD96C23E5423007749024FC2B476E688EB1F66400072DF` |
-| **0.3.8 beta** | Linux x64 (portable) | **[Handess-Wallet-0.3.8-x86_64.AppImage](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.8/Handess-Wallet-0.3.8-x86_64.AppImage)** (122.2 MB) | `143EFB0D109942C1B036601FFAD65E715E0CBCF272D784E60DA17F1B75B38255` |
-| **0.3.8 beta** | Ubuntu / Debian x64 | **[Handess-Wallet-0.3.8-amd64.deb](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.8/Handess-Wallet-0.3.8-amd64.deb)** (82.6 MB) | `5A3D8F85E742A8BA0079AB1643A63A0B2840D61118901DE53AF9A2A2E57F867D` |
-| **0.3.8 beta** | Fedora / RHEL x64 | **[Handess-Wallet-0.3.8-x86_64.rpm](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.8/Handess-Wallet-0.3.8-x86_64.rpm)** (81.0 MB) | `678490CA6258E16115BE2D1851DC0F19A95F9ED355D7E8B5A3A3418E75E76528` |
-| **Optional runtime** | Windows x64 | **[Handess-HSD-Runtime-8.0.0-win-x64.zip](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.8/Handess-HSD-Runtime-8.0.0-win-x64.zip)** (79.5 MB) | `332930EC7D336DD98F82408413FA539ED240D4B7976BE0D05B008C5C2BDBB8DA` |
-| **Optional runtime** | Linux x64 | **[Handess-HSD-Runtime-8.0.0-linux-x64.zip](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.8/Handess-HSD-Runtime-8.0.0-linux-x64.zip)** (53.3 MB) | `45BBB5B5BB8B1A9DC7AB9F5F1DBDAE9DB2F301EEE684D4EAC38A6BB1FD15DADE` |
+| **0.3.9 beta** | Windows 10/11 x64 | **[Handess-Wallet-0.3.9.msi](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.9/Handess-Wallet-0.3.9.msi)** (97.8 MB) | `DEA2B5705E33BA538FC32488797C99D575231DFEB01AAD120A7B48A527813F4D` |
+| **0.3.9 beta** | Linux x64 (portable) | **[Handess-Wallet-0.3.9-x86_64.AppImage](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.9/Handess-Wallet-0.3.9-x86_64.AppImage)** (122.2 MB) | `56C4BC66BFB79434C831D92FAD475FA269A9E4A09B5BBAADA3DD8BA28F7915CE` |
+| **0.3.9 beta** | Ubuntu / Debian x64 | **[Handess-Wallet-0.3.9-amd64.deb](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.9/Handess-Wallet-0.3.9-amd64.deb)** (82.6 MB) | `9A4649515439C08FD7170372B16437467DEC3CEB83D49235D3988A4EBBB079E8` |
+| **0.3.9 beta** | Fedora / RHEL x64 | **[Handess-Wallet-0.3.9-x86_64.rpm](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.9/Handess-Wallet-0.3.9-x86_64.rpm)** (81.0 MB) | `22109D0F33357020E792FB3D9798256BFE989A10C949A8A8BCDA8B9DB669D6F1` |
+| **Optional runtime** | Windows x64 | **[Handess-HSD-Runtime-8.0.0-win-x64.zip](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.9/Handess-HSD-Runtime-8.0.0-win-x64.zip)** (79.5 MB) | `332930EC7D336DD98F82408413FA539ED240D4B7976BE0D05B008C5C2BDBB8DA` |
+| **Optional runtime** | Linux x64 | **[Handess-HSD-Runtime-8.0.0-linux-x64.zip](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.9/Handess-HSD-Runtime-8.0.0-linux-x64.zip)** (53.3 MB) | `45BBB5B5BB8B1A9DC7AB9F5F1DBDAE9DB2F301EEE684D4EAC38A6BB1FD15DADE` |
 
 The app packages contain the wallet only. The optional runtime contains Node.js 24.15.0 and hsd 8.0.0 and is used by the setup wizard for **New to Handshake** users. Existing Node.js or HSD installations are detected and can be reused.
 
 All files are also on the [Releases](https://github.com/8t9-dev/handess-wallet-releases/releases) page.
 
-> **0.3.7 and earlier are superseded.** 0.3.8 fixes the swap progress display, adds an opt-in auto-complete mode for accepted swaps, and adds a DGB reconnect button on the Swap page. 0.3.7 added HNS claim diagnostics and recovery, including the HNS transaction format fix that made claims valid. 0.3.6 fixed DGB transaction signing, which was double-hashing the sighash and causing DigiByte nodes to reject DGB HTLC funding, claim, and refund transactions.
+> **0.3.8 and earlier are superseded.** 0.3.9 relicenses Handess Wallet under **GPLv3** and publishes the source code. The proprietary EULA acceptance gate is removed; the license is available in **Settings → About & Legal**. 0.3.8 fixed the swap progress display, added opt-in auto-complete for accepted swaps, and added a DGB reconnect button. 0.3.7 added HNS claim diagnostics and recovery, including the HNS transaction format fix that made claims valid.
 
 ---
 
@@ -34,7 +34,7 @@ All files are also on the [Releases](https://github.com/8t9-dev/handess-wallet-r
 1. **Windows 10/11 x64, or Linux x64.**
 2. **Back up your seed phrase.** Handess never sends it anywhere and cannot recover it for you.
 3. **Close Bob Wallet or any other wallet** using ports `12037`/`12039` before starting Handess's node.
-4. **Review the license.** Handess Wallet is proprietary beta software distributed under the Handess Wallet EULA. The app shows the EULA on first launch and requires acceptance before use.
+4. **Review the license.** Handess Wallet is free/open-source beta software distributed under the GNU GPL v3 (or later). The license text is available in the app under **Settings → About & Legal**.
 
 New users can use the setup wizard to install a private Node.js + HSD runtime. Existing Handshake users can point the wizard at their existing HSD data directory and avoid a new chain sync.
 
@@ -67,45 +67,45 @@ New users can use the setup wizard to install a private Node.js + HSD runtime. E
 ### Ubuntu / Debian
 
 ```bash
-sudo apt install ./Handess-Wallet-0.3.8-amd64.deb
+sudo apt install ./Handess-Wallet-0.3.9-amd64.deb
 handess-wallet
 ```
 
 ### Fedora / RHEL
 
 ```bash
-sudo dnf install ./Handess-Wallet-0.3.8-x86_64.rpm
+sudo dnf install ./Handess-Wallet-0.3.9-x86_64.rpm
 handess-wallet
 ```
 
 openSUSE may require allowing the unsigned package:
 
 ```bash
-sudo zypper install --allow-unsigned-rpm ./Handess-Wallet-0.3.8-x86_64.rpm
+sudo zypper install --allow-unsigned-rpm ./Handess-Wallet-0.3.9-x86_64.rpm
 ```
 
 ### AppImage (portable)
 
 ```bash
-chmod +x Handess-Wallet-0.3.8-x86_64.AppImage
-./Handess-Wallet-0.3.8-x86_64.AppImage
+chmod +x Handess-Wallet-0.3.9-x86_64.AppImage
+./Handess-Wallet-0.3.9-x86_64.AppImage
 ```
 
 If FUSE is unavailable, run:
 
 ```bash
-./Handess-Wallet-0.3.8-x86_64.AppImage --appimage-extract-and-run
+./Handess-Wallet-0.3.9-x86_64.AppImage --appimage-extract-and-run
 ```
 
 The setup wizard can be re-run later from **Settings → Node & HSD setup**.
 
-### Upgrading from 0.3.7
+### Upgrading from 0.3.8
 
-There is **no auto-updater**. Download and install 0.3.8 on both PCs. Wallet data, swap history, and HSD data live outside the install directory and are preserved. Back up your seed phrase first.
+There is **no auto-updater**. Download and install 0.3.9 on both PCs. Wallet data, swap history, and HSD data live outside the install directory and are preserved. Back up your seed phrase first.
 
-0.3.8 adds the **Auto-complete swaps** toggle on the Swap page. It applies to offers accepted while the toggle is on; existing accepted swaps can be enabled individually from **My Swaps**. Both PCs need 0.3.8 and the toggle enabled for a fully hands-off swap. HNS funding pauses if the HNS wallet is locked; enter the passphrase on the swap to continue.
+0.3.9 changes the license to **GPLv3** and removes the proprietary EULA acceptance gate. The license text is available in **Settings → About & Legal**. The source code is published at <https://github.com/8t9-dev/handess-wallet>.
 
-The DGB connection refresh icon on the Swap page reconnects to the saved DGB server without requiring Disconnect/Connect.
+The auto-complete toggle, per-swap opt-in, locked-wallet pause/resume, and DGB reconnect button from 0.3.8 are retained.
 
 ---
 
@@ -114,7 +114,7 @@ The DGB connection refresh icon on the Swap page reconnects to the saved DGB ser
 ### Windows (PowerShell)
 
 ```powershell
-Get-FileHash .\Handess-Wallet-0.3.8.msi -Algorithm SHA256
+Get-FileHash .\Handess-Wallet-0.3.9.msi -Algorithm SHA256
 Get-FileHash .\Handess-HSD-Runtime-8.0.0-win-x64.zip -Algorithm SHA256
 ```
 
@@ -128,13 +128,13 @@ The same checksums are attached to the release as `SHA256SUMS.txt`.
 
 ---
 
-## What is in 0.3.8
+## What is in 0.3.9
 
-- **Completed progress fixed** — the final **Completed** step now shows a green check instead of an endless spinner after both HTLCs are spent.
-- **Auto-complete swaps** — an opt-in toggle on the Swap page automatically locks and claims the local side of an accepted swap. Manual accept is still required. HNS funding pauses when the wallet is locked and resumes after the passphrase is entered; refunds stay manual.
-- **Per-swap auto opt-in** — the global toggle applies to new accepts. Existing accepted swaps show **Enable auto-complete for this swap**.
-- **DGB reconnect button** — the refresh icon on the Swap page reconnects to the saved DGB server and refreshes the address, balance, offers, and swaps.
-- **HNS payout warning** — the UI states that DGB-side swaps claim HNS to the currently selected HNS wallet, so the correct wallet can be selected before enabling auto-complete.
+- **GPLv3 license** — Handess Wallet is now free/open-source software under `GPL-3.0-or-later`. The proprietary EULA and first-run acceptance gate are removed. The license is shown in **Settings → About & Legal**.
+- **Public source code** — the corresponding source is published at <https://github.com/8t9-dev/handess-wallet>, tagged `v0.3.9`.
+- **Updated legal notices** — the bundled `LICENSE` and `THIRD_PARTY_NOTICES.md` reflect the GPL license. Third-party components remain under their own licenses.
+- **Branding notice** — the Handess name/logo remain 8t9.dev branding and are not licensed under the GPL; forks should rebrand.
+- **Everything from 0.3.8**, including the completed-progress fix, opt-in auto-complete swaps, per-swap auto opt-in, locked-wallet pause/resume, and the DGB reconnect button.
 - **Everything from 0.3.7**, including the HNS transaction format fix, claim diagnostics, on-chain verification, and rebroadcast recovery.
 - **Everything from 0.3.6**, including the DGB signing fix that signs the raw sighash instead of a double hash.
 - **Everything from 0.3.5**, including the shared-offer-ID swap event fix that lets the DGB side apply terms and HNS funding.
@@ -155,7 +155,7 @@ The same checksums are attached to the release as `SHA256SUMS.txt`.
 - **No auto-updater.** Check the Releases page for new versions and install them manually.
 - **A fresh HSD chain is large and slow to sync.** Reuse existing HSD data where possible.
 - **Swaps are beta.** A funded HNS ↔ DGB swap has completed end-to-end, but payout delivery can still require the recovery workflow from the 0.3.7 release notes. Use small amounts where possible. Escrow has not completed a funded end-to-end trade on both chains yet.
-- **Auto-complete is opt-in and local.** Both PCs must run 0.3.8 and enable the toggle for a hands-off swap. HNS funding pauses if the wallet is locked; the passphrase must be entered once. Refunds remain manual, and offers are never auto-accepted.
+- **Auto-complete is opt-in and local.** Both PCs must run 0.3.9 and enable the toggle for a hands-off swap. HNS funding pauses if the wallet is locked; the passphrase must be entered once. Refunds remain manual, and offers are never auto-accepted.
 - **DGB-side payouts use the selected HNS wallet.** Auto-complete claims HNS to the currently selected HNS wallet. Select the intended wallet before enabling it.
 - **Escrow is non-custodial but not risk-free.** The arbiter can collude with either party, lost keys can deadlock funds, and there is no automatic arbiter notification.
 - **Marketplace and swaps depend on Nostr relays.**
@@ -177,10 +177,12 @@ Please include the app version, operating system and version, and the exact erro
 
 ## License and source
 
-Handess Wallet is **proprietary beta software** distributed under the **Handess Wallet End User License Agreement (EULA)**. It is free to download and use for personal or internal business purposes.
+Handess Wallet is **free/open-source software** distributed under the **GNU General Public License, version 3 or (at your option) any later version** (`GPL-3.0-or-later`).
 
-The EULA does **not** permit modifying, editing, forking, creating derivative works based on, or redistributing the app. The source is not published, and no source-code license is granted. The Handess name and logo may not be used for modified versions.
+Copyright (C) 2026 **8t9.dev**.
 
-The EULA is available in this repository as [LICENSE](LICENSE), is included in the app package as `LICENSE`, is shown on first launch, and can be reviewed later from **Settings → About & Legal**. Third-party components remain under their own licenses; their notices are included in this repository and the app package as [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). The optional runtimes include Node.js and hsd license files.
+You may use, modify, and redistribute the software under the GPL. The corresponding source code is published at <https://github.com/8t9-dev/handess-wallet>. The license text is available in this repository as [LICENSE](LICENSE), is included in the app package as `LICENSE`, and can be reviewed in the app under **Settings → About & Legal**.
 
-If you do not agree to the EULA, do not install or use the app.
+Third-party components remain under their own licenses; their notices are included in this repository and the app package as [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). The optional runtimes include Node.js and hsd license files.
+
+The **Handess** name and logo are branding of 8t9.dev and are not licensed under the GPL. Modified versions should use different branding.
