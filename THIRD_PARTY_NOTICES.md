@@ -1,7 +1,7 @@
 # Handess Wallet — Third-Party Notices
 
-**Applies to:** Handess Wallet 0.3.10 beta  
-**Generated:** 2026-11-23  
+**Applies to:** Handess Wallet 0.3.11 beta  
+**Generated:** 2026-11-24  
 **Generated from:** `package-lock.json` and the installed package license files
 
 Handess Wallet is free software distributed under the GNU General Public License, version 3 or (at your option) any later version (`GPL-3.0-or-later`), in `LICENSE`. This file provides attribution and license notices for third-party software included in the application. It does not change the Handess Wallet license. Each third-party component remains governed by its own license.

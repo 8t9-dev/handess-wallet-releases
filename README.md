@@ -14,18 +14,18 @@ This repository contains release downloads and metadata. The GPLv3 source code i
 
 | Version | Platform | File | SHA-256 |
 | --- | --- | --- | --- |
-| **0.3.10 beta** | Windows 10/11 x64 | **[Handess-Wallet-0.3.10.msi](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.10/Handess-Wallet-0.3.10.msi)** (97.8 MB) | `7968F53D8BD164D1B5DF23CF20C0940095C2F226F05D5066F7C17B98A4E77C83` |
-| **0.3.10 beta** | Linux x64 (portable) | **[Handess-Wallet-0.3.10-x86_64.AppImage](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.10/Handess-Wallet-0.3.10-x86_64.AppImage)** (122.2 MB) | `97573367606FBC22376F5462BC20BC5CBC9413B51E2395F657D906236A8B9555` |
-| **0.3.10 beta** | Ubuntu / Debian x64 | **[Handess-Wallet-0.3.10-amd64.deb](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.10/Handess-Wallet-0.3.10-amd64.deb)** (82.5 MB) | `763A91469FCA979530B6611C2A15602098C84FCC25ADC2B47B0D85DBD0E719A4` |
-| **0.3.10 beta** | Fedora / RHEL x64 | **[Handess-Wallet-0.3.10-x86_64.rpm](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.10/Handess-Wallet-0.3.10-x86_64.rpm)** (81.0 MB) | `8D74979ECC291CA8449C742772CE8254C2AB5F16E8949B76EB975679939E89AB` |
-| **Optional runtime** | Windows x64 | **[Handess-HSD-Runtime-8.0.0-win-x64.zip](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.10/Handess-HSD-Runtime-8.0.0-win-x64.zip)** (79.5 MB) | `332930EC7D336DD98F82408413FA539ED240D4B7976BE0D05B008C5C2BDBB8DA` |
-| **Optional runtime** | Linux x64 | **[Handess-HSD-Runtime-8.0.0-linux-x64.zip](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.10/Handess-HSD-Runtime-8.0.0-linux-x64.zip)** (53.3 MB) | `45BBB5B5BB8B1A9DC7AB9F5F1DBDAE9DB2F301EEE684D4EAC38A6BB1FD15DADE` |
+| **0.3.11 beta** | Windows 10/11 x64 | **[Handess-Wallet-0.3.11.msi](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.11/Handess-Wallet-0.3.11.msi)** (97.8 MB) | `2217E01B557C36500D5F9E675256484EC0B92FB3348FCB2D4E0EB75EC2640186` |
+| **0.3.11 beta** | Linux x64 (portable) | **[Handess-Wallet-0.3.11-x86_64.AppImage](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.11/Handess-Wallet-0.3.11-x86_64.AppImage)** (122.2 MB) | `89A54B5E32E49D1F81A76548639B781CEDCF2BB7C4269080DFA88FF762CD0041` |
+| **0.3.11 beta** | Ubuntu / Debian x64 | **[Handess-Wallet-0.3.11-amd64.deb](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.11/Handess-Wallet-0.3.11-amd64.deb)** (82.6 MB) | `57A4656D8B894B8EEF1BC582E5C495478430406E884258A600D13FAFFED3283C` |
+| **0.3.11 beta** | Fedora / RHEL x64 | **[Handess-Wallet-0.3.11-x86_64.rpm](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.11/Handess-Wallet-0.3.11-x86_64.rpm)** (81.0 MB) | `56C275D2F4DA928FB13B4AE5372348FDB136073CEEA27A83C9E559DB28F1165D` |
+| **Optional runtime** | Windows x64 | **[Handess-HSD-Runtime-8.0.0-win-x64.zip](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.11/Handess-HSD-Runtime-8.0.0-win-x64.zip)** (79.5 MB) | `332930EC7D336DD98F82408413FA539ED240D4B7976BE0D05B008C5C2BDBB8DA` |
+| **Optional runtime** | Linux x64 | **[Handess-HSD-Runtime-8.0.0-linux-x64.zip](https://github.com/8t9-dev/handess-wallet-releases/releases/download/v0.3.11/Handess-HSD-Runtime-8.0.0-linux-x64.zip)** (53.3 MB) | `45BBB5B5BB8B1A9DC7AB9F5F1DBDAE9DB2F301EEE684D4EAC38A6BB1FD15DADE` |
 
 The app packages contain the wallet only. The optional runtime contains Node.js 24.15.0 and hsd 8.0.0 and is used by the setup wizard for **New to Handshake** users. Existing Node.js or HSD installations are detected and can be reused.
 
 All files are also on the [Releases](https://github.com/8t9-dev/handess-wallet-releases/releases) page.
 
-> **0.3.9 and earlier are superseded.** 0.3.10 fixes DGB Electrum connections that failed with `use server.version to identify client` on ElectrumX 2.0 servers. 0.3.9 relicensed Handess Wallet under **GPLv3** and published the source code; the proprietary EULA acceptance gate is removed, and the license is available in **Settings → About & Legal**. 0.3.8 fixed the swap progress display, added opt-in auto-complete for accepted swaps, and added a DGB reconnect button. 0.3.7 added HNS claim diagnostics and recovery, including the HNS transaction format fix that made claims valid.
+> **0.3.10 and earlier are superseded.** 0.3.11 fixes marketplace purchases that could not be paid while a name transfer was in progress. 0.3.10 fixed DGB Electrum connections that failed with `use server.version to identify client` on ElectrumX 2.0 servers. 0.3.9 relicensed Handess Wallet under **GPLv3** and published the source code; the proprietary EULA acceptance gate is removed, and the license is available in **Settings → About & Legal**. 0.3.8 fixed the swap progress display, added opt-in auto-complete for accepted swaps, and added a DGB reconnect button. 0.3.7 added HNS claim diagnostics and recovery, including the HNS transaction format fix that made claims valid.
 
 ---
 
@@ -66,45 +66,45 @@ New users can use the setup wizard to install a private Node.js + HSD runtime. E
 ### Ubuntu / Debian
 
 ```bash
-sudo apt install ./Handess-Wallet-0.3.10-amd64.deb
+sudo apt install ./Handess-Wallet-0.3.11-amd64.deb
 handess-wallet
 ```
 
 ### Fedora / RHEL
 
 ```bash
-sudo dnf install ./Handess-Wallet-0.3.10-x86_64.rpm
+sudo dnf install ./Handess-Wallet-0.3.11-x86_64.rpm
 handess-wallet
 ```
 
 openSUSE may require allowing the unsigned package:
 
 ```bash
-sudo zypper install --allow-unsigned-rpm ./Handess-Wallet-0.3.10-x86_64.rpm
+sudo zypper install --allow-unsigned-rpm ./Handess-Wallet-0.3.11-x86_64.rpm
 ```
 
 ### AppImage (portable)
 
 ```bash
-chmod +x Handess-Wallet-0.3.10-x86_64.AppImage
-./Handess-Wallet-0.3.10-x86_64.AppImage
+chmod +x Handess-Wallet-0.3.11-x86_64.AppImage
+./Handess-Wallet-0.3.11-x86_64.AppImage
 ```
 
 If FUSE is unavailable, run:
 
 ```bash
-./Handess-Wallet-0.3.10-x86_64.AppImage --appimage-extract-and-run
+./Handess-Wallet-0.3.11-x86_64.AppImage --appimage-extract-and-run
 ```
 
 The setup wizard can be re-run later from **Settings → Node & HSD setup**.
 
-### Upgrading from 0.3.9
+### Upgrading from 0.3.10
 
-There is **no auto-updater**. Download and install 0.3.10 on both PCs. Wallet data, swap history, and HSD data live outside the install directory and are preserved. Back up your seed phrase first.
+There is **no auto-updater**. Download and install 0.3.11 on both PCs. Wallet data, swap history, and HSD data live outside the install directory and are preserved. Back up your seed phrase first.
 
-0.3.10 only changes the DGB Electrum handshake. Existing DGB server settings are reused; if a connection still fails, use the default DGB server in **Settings**, or click the DGB refresh button on the Swap page.
+Purchases that are waiting on a transfer should update after upgrading: open **My Purchases** and let the status refresh. A transfer that is in progress on-chain should show **Transfer detected** and enable **Pay seller**.
 
-The GPLv3 license, public source, auto-complete toggle, per-swap opt-in, locked-wallet pause/resume, and DGB reconnect button from 0.3.9 and 0.3.8 are retained.
+The DGB Electrum handshake fix from 0.3.10, the GPLv3 license and public source from 0.3.9, and the auto-complete toggle, per-swap opt-in, locked-wallet pause/resume, and DGB reconnect button from 0.3.8 are retained.
 
 ---
 
@@ -113,7 +113,7 @@ The GPLv3 license, public source, auto-complete toggle, per-swap opt-in, locked-
 ### Windows (PowerShell)
 
 ```powershell
-Get-FileHash .\Handess-Wallet-0.3.10.msi -Algorithm SHA256
+Get-FileHash .\Handess-Wallet-0.3.11.msi -Algorithm SHA256
 Get-FileHash .\Handess-HSD-Runtime-8.0.0-win-x64.zip -Algorithm SHA256
 ```
 
@@ -127,16 +127,20 @@ The same checksums are attached to the release as `SHA256SUMS.txt`.
 
 ---
 
-## What is in 0.3.10
+## What is in 0.3.11
 
-- **DGB connection fix** — ElectrumX 2.0 servers require `server.version` to be the first request. 0.3.10 negotiates the protocol version before any other request, fixing `use server.version to identify client` on DGB connect.
+- **Marketplace transfer detection fixed** — Handshake has no `TRANSFER` name state. A transferring name stays `CLOSED` with a non-zero `transfer` height, and hsd pays the transfer coin back to the seller while encoding the buyer in the `TRANSFER` covenant. 0.3.11 treats `transfer > 0` as an active transfer, decodes the covenant to verify the buyer, and scopes matching by the name hash so an unrelated transfer to the same address cannot be attributed to another name.
+- **Pay seller enabled from the chain** — the button is enabled as soon as the on-chain transfer is verified, even if a Nostr relay update was missed, and the payment path re-checks the chain before sending.
+- **Finalization detected** — the owner coin is read through hsd's `coin/:hash/:index` endpoint. The previous `getcoin` JSON-RPC call does not exist on hsd's HTTP API, so finalization was never detected.
+- **Purchase polling** — pending, transferred, and paid purchases are refreshed from the chain instead of relying only on the seller's status event, with clearer states for transfer, cancellation, and finalization.
+- **Everything from 0.3.10**, including the DGB Electrum `server.version` handshake fix for ElectrumX 2.0.
 - **Everything from 0.3.9**, including the GPLv3 license, removal of the proprietary EULA gate, the published source code, and updated legal notices.
 - **Everything from 0.3.8**, including the completed-progress fix, opt-in auto-complete swaps, per-swap auto opt-in, locked-wallet pause/resume, and the DGB reconnect button.
 - **Everything from 0.3.7**, including the HNS transaction format fix, claim diagnostics, on-chain verification, and rebroadcast recovery.
 - **Everything from 0.3.6**, including the DGB signing fix that signs the raw sighash instead of a double hash.
 - **Everything from 0.3.5**, including the shared-offer-ID swap event fix that lets the DGB side apply terms and HNS funding.
 - **Everything from 0.3.4**, including the pure-JS SHA3 fix for HNS HTLC/escrow address derivation.
-- **Everything from 0.3.3 and earlier**, including the DGB Electrum notification crash fix, marketplace transfer detection fixes, Linux packages, the DGB WIF QR, Finalize All, per-name transaction-history rows, received-name fee handling, and copyable transaction hashes.
+- **Everything from 0.3.3 and earlier**, including the DGB Electrum notification crash fix, Linux packages, the DGB WIF QR, Finalize All, per-name transaction-history rows, received-name fee handling, and copyable transaction hashes.
 
 > **Before rebroadcasting:** select the HNS wallet that should receive the swap first. If no earlier claim address was saved, the rebroadcast pays the currently selected wallet.
 
@@ -152,10 +156,10 @@ The same checksums are attached to the release as `SHA256SUMS.txt`.
 - **No auto-updater.** Check the Releases page for new versions and install them manually.
 - **A fresh HSD chain is large and slow to sync.** Reuse existing HSD data where possible.
 - **Swaps are beta.** A funded HNS ↔ DGB swap has completed end-to-end, but payout delivery can still require the recovery workflow from the 0.3.7 release notes. Use small amounts where possible. Escrow has not completed a funded end-to-end trade on both chains yet.
-- **Auto-complete is opt-in and local.** Both PCs must run 0.3.10 and enable the toggle for a hands-off swap. HNS funding pauses if the wallet is locked; the passphrase must be entered once. Refunds remain manual, and offers are never auto-accepted.
+- **Auto-complete is opt-in and local.** Both PCs must run 0.3.11 and enable the toggle for a hands-off swap. HNS funding pauses if the wallet is locked; the passphrase must be entered once. Refunds remain manual, and offers are never auto-accepted.
 - **DGB-side payouts use the selected HNS wallet.** Auto-complete claims HNS to the currently selected HNS wallet. Select the intended wallet before enabling it.
 - **Escrow is non-custodial but not risk-free.** The arbiter can collude with either party, lost keys can deadlock funds, and there is no automatic arbiter notification.
-- **Marketplace and swaps depend on Nostr relays.**
+- **Marketplace and swaps depend on Nostr relays.** Purchase payment uses the Handshake chain as the source of truth for transfer state.
 - **DGB support is for swaps only.** There is no general DGB send screen.
 - **Electron 28 is end-of-life.** A dependency refresh is in progress.
 - **No hardware-wallet support.**
